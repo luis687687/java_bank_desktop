@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="561.0" prefWidth="927.0" style="-fx-background-color: colorbase;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.CreateEmployedController">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="61.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="761.0" minWidth="10.0" prefWidth="761.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="79.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 40 0 0 0;" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="title" text="Criar Funcionário da agência" />
+                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="448.0" prefWidth="619.0" style="-fx-spacing: 20; -fx-padding: 20 0 0 30;">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" prefHeight="379.0" prefWidth="288.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="26.0" styleClass="rotulo" text="DADOS DE LOGIN" />
+                              <Label layoutX="10.0" layoutY="51.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Email" />
+                              <TextField fx:id="inputemail" layoutX="10.0" layoutY="67.0" prefHeight="31.0" prefWidth="247.0" promptText="Nome completo" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <Label layoutX="10.0" layoutY="106.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Senha" />
+                              <Label layoutX="14.0" layoutY="200.0" styleClass="rotulo" text="CRIA CONTA DE FUNCIONÁRIO" />
+                              <Label layoutX="14.0" layoutY="222.0" minHeight="-Infinity" styleClass="rotulo" text="Seleccione a agência para o funcionário" />
+                              <ComboBox fx:id="inputagency" layoutX="17.0" layoutY="259.0" prefHeight="31.0" prefWidth="247.0" promptText="Selecione Agência" style="-fx-background-color: colorbase;" styleClass="input" />
+                              <PasswordField fx:id="inputpass" layoutX="10.0" layoutY="122.0" prefHeight="31.0" prefWidth="247.0" promptText="Senha de acesso" style="-fx-background-color: colorbase;" styleClass="input" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="131.0" layoutY="69.0" maxHeight="-Infinity" prefHeight="372.0" prefWidth="429.0" style="-fx-background-color: colormain;">
+                           <children>
+                              <HBox fx:id="btnsave" alignment="CENTER" layoutX="14.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" style="-fx-background-color: syscolor;">
+                                 <children>
+                                    <Label style="-fx-text-fill: white;" text="Salvar">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="81.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" style="-fx-background-color: transparent; -fx-border-color: syscolor;">
+                                 <children>
+                                    <Label fx:id="btncancel1" style="-fx-text-fill: syscolor;" text="Cancelar">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="98.0" styleClass="rotulo" text="DADOS PESSOAIS" />
+                              <Label layoutX="14.0" layoutY="128.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Nome" />
+                              <TextField fx:id="inputname" layoutX="14.0" layoutY="144.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <Label layoutX="256.0" layoutY="133.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Morada" />
+                              <TextField fx:id="inputlocal" layoutX="256.0" layoutY="149.0" prefHeight="31.0" prefWidth="149.0" promptText="Morada" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <Label layoutX="14.0" layoutY="198.0" styleClass="rotulo" text="INFORMAÇÕES DE CONTACTO" />
+                              <Label layoutX="18.0" layoutY="228.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 1" />
+                              <TextField fx:id="inputcontact" layoutX="18.0" layoutY="244.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto principal" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <Label layoutX="257.0" layoutY="221.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 2" />
+                              <TextField fx:id="inputcontact2" layoutX="257.0" layoutY="237.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <HBox fx:id="btnimage" alignment="CENTER" layoutX="284.0" layoutY="29.0" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: transparent; -fx-border-color: syscolor;">
+                                 <children>
+                                    <Label fx:id="btnimg" style="-fx-text-fill: syscolor;" text="Buscar Imagem">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <AnchorPane fx:id="img" layoutX="14.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" styleClass="avatar" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <stylesheets>
+      <URL value="@main.css" />
+      <URL value="@light.css" />
+   </stylesheets>
+</BorderPane>

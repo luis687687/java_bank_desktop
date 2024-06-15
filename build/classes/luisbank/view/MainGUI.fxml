@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="main" fx:id="window" maxWidth="1.7976931348623157E308" prefHeight="709.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.GUIController">
+   <center>
+      <BorderPane fx:id="main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <GridPane fx:id="rightarea" styleClass="area" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane id="gridb" styleClass="main-top">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="294.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="300.0" styleClass="main-top-left">
+                           <children>
+                              <Label styleClass="title" text="Cartões">
+                                 <font>
+                                    <Font name="Arial" size="27.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <GridPane prefHeight="49.0" prefWidth="629.0" GridPane.columnIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="389.0" minWidth="10.0" prefWidth="138.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="656.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="107.0" style="-fx-spacing: 10;" GridPane.columnIndex="1">
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #eee; -fx-background-radius: 100%;" />
+                                    <Label prefHeight="18.0" prefWidth="89.0" text="Luis Domingos Marques" />
+                                    <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #eee;" styleClass="icon" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label styleClass="title" text="Agência">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <BorderPane fx:id="areabody" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <GridPane id="grida" fx:id="areabody1" prefHeight="644.0" prefWidth="1029.0" styleClass="area" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="294.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="area-left" GridPane.rowIndex="1">
+                                 <center>
+                                    <VBox prefHeight="617.0" prefWidth="302.0" style="-fx-background-color: transparent; -fx-padding: 20; -fx-spacing: 30;" styleClass="left-cards-container" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <AnchorPane maxHeight="145.0" maxWidth="242.0" prefHeight="145.0" prefWidth="242.0" style="-fx-background-color: transparent;" styleClass="main-card">
+                                             <children>
+                                                <AnchorPane layoutX="-55.0" prefHeight="102.0" prefWidth="232.0" style="-fx-background-radius: 100%; -fx-background-color: red;" translateX="70.0" translateY="40.0">
+                                                   <effect>
+                                                      <DropShadow height="85.0" offsetY="10.0" radius="26.0">
+                                                         <color>
+                                                            <Color opacity="0.5152671933174133" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </AnchorPane>
+                                                <ScrollPane hbarPolicy="NEVER" layoutX="-2.0" layoutY="-2.0" prefHeight="149.0" prefWidth="260.0" style="-fx-border-color: transparent; -fx-background: transparent; -fx-background-color: linear-gradient(to right top, #4334ad, #503fc0); -fx-border-color: transparent; -fx-border-width: 0;" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6c5bde; -fx-background-radius: 100%; -fx-translate-x: 50; -fx-translate-y: -90; -fx-pref-width: 300px; -fx-pref-height: 250px;">
+                                                         <children>
+                                                            <AnchorPane layoutX="-137.0" layoutY="-58.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #816fff30; -fx-background-radius: 100%;">
+                                                               <children>
+                                                                  <ImageView fitHeight="29.0" fitWidth="40.0" layoutX="105.0" layoutY="171.0">
+                                                                     <image>
+                                                                        <Image url="@../assets/icons/mastercard.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <Label layoutX="-38.0" layoutY="192.0" style="-fx-text-fill: white;" text="Data  de  expiração  05  /  30" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="113.0" layoutY="110.0" style="-fx-text-fill: white;" text="AOA" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <AnchorPane layoutX="184.0" layoutY="214.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #3D3098; -fx-background-radius: 10 0 0 0;">
+                                                               <children>
+                                                                  <AnchorPane layoutX="7.0" layoutY="5.0" minHeight="17.0" minWidth="17.0" prefHeight="13.0" prefWidth="13.0" style="-fx-shape: &quot;M937.4 408.2c-23.699999999999932 13.600000000000023-45.69999999999993 26.19999999999999-67.69999999999993 38.80000000000001-10.700000000000045 6.100000000000023-21.700000000000045 11.899999999999977-32 18.69999999999999-3 2-5.800000000000068 6.800000000000011-5.900000000000091 10.400000000000034-0.599999999999909 15.5 0.10000000000002274 31-0.39999999999997726 46.39999999999998-0.1999999999999318 6.100000000000023 1.7000000000000455 9.399999999999977 7 12.399999999999977 29.300000000000068 16.399999999999977 58.30000000000007 33.10000000000002 87.39999999999998 49.80000000000007 3.300000000000068 1.8999999999999773 6.5 4 11.700000000000045 7.2999999999999545-9.100000000000023 25.799999999999955-18 51.60000000000002-27.600000000000023 77.20000000000005-1 2.699999999999932-6.199999999999932 5.699999999999932-9.199999999999932 5.399999999999977-32.80000000000007-2.7000000000000455-65.60000000000002-5.7000000000000455-98.20000000000005-9.5-10.799999999999955-1.2000000000000455-18.200000000000045-0.39999999999997726-24.299999999999955 10.399999999999977-6.2000000000000455 11.299999999999955-15.200000000000045 21.100000000000023-23.600000000000023 31.100000000000023-4 4.899999999999977-4.899999999999977 8.600000000000023-2.1000000000000227 14.799999999999955 15.299999999999955 33.200000000000045 30 66.60000000000002 45.89999999999998 102.39999999999998-23.5 15.900000000000091-47 32.10000000000002-70.79999999999995 47.700000000000045-2 1.2999999999999545-7.300000000000068-0.10000000000002274-9.600000000000023-2-26.5-22.299999999999955-52.700000000000045-44.799999999999955-78.79999999999995-67.60000000000002-4.800000000000068-4.199999999999932-8.5-5.2999999999999545-14.900000000000091-2.8999999999999773-14.199999999999932 5.2999999999999545-28.699999999999932 9.700000000000045-43.39999999999998 13.5-6.7999999999999545 1.7999999999999545-9.600000000000023 4.899999999999977-11.100000000000023 11.700000000000045-7.699999999999932 35.299999999999955-15.899999999999977 70.39999999999998-24.299999999999955 107.09999999999991h-91.5c-8.300000000000011-36.299999999999955-16.600000000000023-71.39999999999998-24.100000000000023-106.69999999999993-1.599999999999966-7.399999999999977-4.899999999999977-10.300000000000068-11.899999999999977-12.100000000000023-14.300000000000011-3.7999999999999545-28.5-8.100000000000023-42.30000000000001-13.399999999999977-6.300000000000011-2.3999999999999773-10-1.7000000000000455-15 2.6000000000000227-26 22.799999999999955-52.30000000000001 45.299999999999955-78.80000000000001 67.59999999999991-2.5 2.1000000000000227-8.299999999999955 3.5-10.399999999999977 2.1000000000000227-23.599999999999994-15.399999999999977-46.69999999999999-31.5-70.19999999999999-47.5 15.599999999999994-34.69999999999993 30-67.39999999999998 45-99.89999999999998 3.5999999999999943-7.7999999999999545 2.799999999999983-12.899999999999977-2.8000000000000114-19.399999999999977-9-10.300000000000068-17.099999999999994-21.5-24.599999999999994-33-3.9000000000000057-5.899999999999977-8-7.7000000000000455-14.700000000000017-7-33.39999999999998 3.5-66.89999999999998 6.399999999999977-100.29999999999998 10-7.900000000000006 0.7999999999999545-13 0.39999999999997726-15.900000000000006-8.600000000000023-8-24.600000000000023-16.799999999999997-49-25.5-73.89999999999998 4.700000000000003-3 7.799999999999997-5.2000000000000455 11.099999999999994-7.100000000000023 29.10000000000001-16.700000000000045 58.20000000000002-33.39999999999998 87.4-49.799999999999955 5.699999999999989-3.2000000000000455 7.800000000000011-6.600000000000023 7.5-13.200000000000045-0.5999999999999943-14.800000000000011-0.5999999999999943-29.600000000000023 0-44.30000000000001 0.30000000000001137-6.5-1.6999999999999886-10.099999999999966-7.400000000000006-13.300000000000011-29.599999999999994-16.599999999999966-58.89999999999999-33.5-88.3-50.39999999999998-2.700000000000003-1.6000000000000227-5.3999999999999915-3.1999999999999886-10.399999999999999-6.199999999999989 9.300000000000004-26.19999999999999 18.4-52.60000000000002 28.199999999999996-78.80000000000001 0.8000000000000114-2.1999999999999886 6.1000000000000085-4.300000000000011 9.100000000000009-4.100000000000023 32.8 2.8000000000000114 65.60000000000001 5.7000000000000455 98.2 9.600000000000023 11 1.3000000000000114 18.099999999999994-0.30000000000001137 24-10.899999999999977 6.099999999999994-10.900000000000034 14.799999999999983-20.600000000000023 23-30.200000000000045 4.400000000000006-5.199999999999989 5.299999999999983-9.299999999999955 2.299999999999983-15.699999999999989-15.299999999999983-33.099999999999994-29.899999999999977-66.5-45.79999999999998-101.89999999999998 23.400000000000006-16 46.599999999999994-32 70.1-47.400000000000006 2.1999999999999886-1.4000000000000057 8-0.09999999999999432 10.5 2 26.5 22.299999999999983 52.80000000000001 44.79999999999998 78.80000000000001 67.6 4.899999999999977 4.300000000000011 8.699999999999989 5 14.899999999999977 2.6999999999999886 14.199999999999989-5.299999999999983 28.80000000000001-9.599999999999994 43.400000000000034-13.599999999999994 6.099999999999966-1.6999999999999886 9.299999999999955-4.299999999999983 10.699999999999989-10.799999999999983 7.699999999999989-35.30000000000001 15.899999999999977-70.60000000000001 24.30000000000001-107.60000000000001h91.60000000000002c8.299999999999955 36.39999999999999 16.5 71.49999999999999 24.199999999999932 106.8 1.5 6.800000000000011 4.399999999999977 9.800000000000011 11.100000000000023 11.599999999999994 14.600000000000023 3.9000000000000057 29.200000000000045 8.400000000000006 43.39999999999998 13.5 5.800000000000068 2.0999999999999943 9.5 1.9000000000000057 14.200000000000045-2.1999999999999886l78.5-67.9c4.2999999999999545-3.799999999999997 7.5-5.400000000000006 12.699999999999932-1.6999999999999886 22.5 15.699999999999989 45.30000000000007 31.099999999999994 68.60000000000002 47-11.199999999999932 25.099999999999994-21.600000000000023 48.39999999999998-32 71.69999999999999-4.699999999999932 10.600000000000023-9.100000000000023 21.30000000000001-14.299999999999955 31.69999999999999-2.7000000000000455 5.300000000000011-1.5 8.800000000000011 1.8999999999999773 13.100000000000023 9.399999999999977 11.899999999999977 18.799999999999955 23.80000000000001 27.299999999999955 36.30000000000001 3.7000000000000455 5.5 7.5 7.2999999999999545 13.800000000000068 6.599999999999966 33.39999999999998-3.3999999999999773 66.89999999999998-6.199999999999989 100.29999999999995-10 8.700000000000045-1 13.700000000000045 0.19999999999998863 16.600000000000023 9.100000000000023 8.100000000000023 24.5 16.799999999999955 48.89999999999998 25.399999999999977 73.89999999999998z m-291.79999999999995 95.90000000000003c2.199999999999932-77.20000000000005-61.200000000000045-143.90000000000003-138.60000000000002-145.8-83.60000000000002-2-150 58.19999999999999-152.39999999999998 138.3-2.3000000000000114 76.10000000000002 61.5 142.69999999999993 138.59999999999997 144.69999999999993 82.80000000000001 2.300000000000068 150.09999999999997-58.299999999999955 152.40000000000003-137.19999999999993z&quot;; -fx-background-color: syscolor;" styleClass="icon" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label layoutX="183.0" layoutY="27.0" prefHeight="24.0" prefWidth="52.0" style="-fx-text-fill: white;" text="9297" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Bright" size="19.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="14.0" layoutY="73.0" style="-fx-text-fill: white;" text="****           ****          ****         0908" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="30.0" layoutY="30.0" maxHeight="145.0" maxWidth="242.0" prefHeight="145.0" prefWidth="242.0" style="-fx-background-color: transparent;" styleClass="main-card">
+                                             <children>
+                                                <AnchorPane layoutX="-55.0" prefHeight="102.0" prefWidth="232.0" style="-fx-background-radius: 100%; -fx-background-color: red;" translateX="70.0" translateY="40.0" visible="false">
+                                                   <effect>
+                                                      <DropShadow height="85.0" offsetY="10.0" radius="26.0">
+                                                         <color>
+                                                            <Color opacity="0.5152671933174133" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </AnchorPane>
+                                                <ScrollPane hbarPolicy="NEVER" layoutX="-2.0" layoutY="-2.0" prefHeight="149.0" prefWidth="260.0" style="-fx-border-color: transparent; -fx-background: transparent; -fx-background-color: linear-gradient(to right top, #ff0000, #ff002b); -fx-border-color: transparent; -fx-border-width: 0;" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ff2040; -fx-background-radius: 100%; -fx-translate-x: 50; -fx-translate-y: -90; -fx-pref-width: 300px; -fx-pref-height: 250px;">
+                                                         <children>
+                                                            <Label layoutX="-38.0" layoutY="192.0" style="-fx-text-fill: white;" text="Data  de  expiração  05  /  30" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <AnchorPane layoutX="-137.0" layoutY="-58.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #ff4261a0; -fx-background-radius: 100%;">
+                                                               <children>
+                                                                  <ImageView fitHeight="29.0" fitWidth="48.0" layoutX="101.0" layoutY="169.0" translateX="5.0">
+                                                                     <image>
+                                                                        <Image url="@../assets/icons/visa.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <Label layoutX="113.0" layoutY="110.0" style="-fx-text-fill: white;" text="AOA" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label layoutX="183.0" layoutY="27.0" prefHeight="24.0" prefWidth="52.0" style="-fx-text-fill: white;" text="3051" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Bright" size="19.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="14.0" layoutY="73.0" style="-fx-text-fill: white;" text="****           ****          ****         0908" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="30.0" layoutY="30.0" maxHeight="145.0" maxWidth="242.0" prefHeight="145.0" prefWidth="242.0" style="-fx-background-color: transparent;" styleClass="main-card">
+                                             <children>
+                                                <AnchorPane layoutX="-55.0" prefHeight="102.0" prefWidth="232.0" style="-fx-background-radius: 100%; -fx-background-color: red;" translateX="70.0" translateY="40.0" visible="false">
+                                                   <effect>
+                                                      <DropShadow height="85.0" offsetY="10.0" radius="26.0">
+                                                         <color>
+                                                            <Color opacity="0.5152671933174133" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </AnchorPane>
+                                                <ScrollPane hbarPolicy="NEVER" layoutX="-2.0" layoutY="-2.0" prefHeight="149.0" prefWidth="260.0" style="-fx-border-color: transparent; -fx-background: transparent; -fx-background-color: #ffad00; -fx-border-color: transparent; -fx-border-width: 0;" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffbb00; -fx-background-radius: 100%; -fx-translate-x: 50; -fx-translate-y: -90; -fx-pref-width: 300px; -fx-pref-height: 250px;">
+                                                         <children>
+                                                            <AnchorPane layoutX="-137.0" layoutY="-58.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #fec53478; -fx-background-radius: 100%;">
+                                                               <children>
+                                                                  <ImageView fitHeight="29.0" fitWidth="40.0" layoutX="105.0" layoutY="169.0">
+                                                                     <image>
+                                                                        <Image url="@../assets/icons/mastercard.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <Label layoutX="-38.0" layoutY="192.0" style="-fx-text-fill: white;" text="Data  de  expiração  05  /  30" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="113.0" layoutY="110.0" style="-fx-text-fill: white;" text="AOA" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label layoutX="183.0" layoutY="27.0" prefHeight="24.0" prefWidth="52.0" style="-fx-text-fill: white;" text="9297" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Bright" size="19.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="14.0" layoutY="73.0" style="-fx-text-fill: white;" text="****           ****          ****         0908" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </center>
+                                 <bottom>
+                                    <HBox prefHeight="53.0" prefWidth="100.0" style="-fx-background-color: bottomcolor;" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                              </BorderPane>
+                              <HBox prefHeight="100.0" prefWidth="200.0" styleClass="main-top-right" GridPane.columnIndex="1" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: tr;" />
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <top>
+                                    <GridPane styleClass="area-right" BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="261.0" minHeight="0.0" prefHeight="196.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="440.0" minHeight="10.0" prefHeight="189.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="273.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane alignment="TOP_CENTER">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="207.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="302.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label style="-fx-text-fill: labelcolor; -fx-font-size: 11;" text="DETALHES DE OPERAÇÕES" translateX="30.0" translateY="30.0">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <AnchorPane>
+                                                         <children>
+                                                            <AnchorPane layoutX="180.0" layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F6F8FB;">
+                                                               <children>
+                                                                  <Label alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="20.0" prefWidth="46.0" style="-fx-text-fill: #CCD2DC;" text="Anos">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F6F8FB;">
+                                                               <children>
+                                                                  <Label layoutX="30.0" layoutY="10.0" prefHeight="20.0" prefWidth="46.0" style="-fx-text-fill: #CCD2DC;" text="semanas">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane layoutX="90.0" layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: colormain;">
+                                                               <children>
+                                                                  <Label alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="20.0" prefWidth="46.0" style="-fx-text-fill: titlelabelcolor;" text="Meses">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <effect>
+                                                                  <DropShadow offsetY="5.0">
+                                                                     <color>
+                                                                        <Color red="0.7893518805503845" green="0.7981643676757812" blue="0.8157894611358643" opacity="0.2800000011920929" />
+                                                                     </color>
+                                                                  </DropShadow>
+                                                               </effect>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <HBox alignment="TOP_RIGHT" prefHeight="48.0" prefWidth="306.0" style="-fx-padding: 30 30 0 0; -fx-spacing: 10;">
+                                                         <children>
+                                                            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="102.0" style="-fx-border-color: topbordercolor; -fx-border-width: 1;">
+                                                               <children>
+                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: titlelabelcolor;" text="DEPÓSITO">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <AnchorPane layoutX="14.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" styleClass="icon" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="134.0" style="-fx-border-color: topbordercolor; -fx-border-width: 1;">
+                                                               <children>
+                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: titlelabelcolor; -fx-font-size: 11;" text="TRANSFERÊNCIA">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <AnchorPane layoutX="14.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" styleClass="icon" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </center>
+         <left>
+            <BorderPane id="esquerda" prefHeight="709.0" prefWidth="117.0" BorderPane.alignment="CENTER">
+                  
+                  <top>
+                     <HBox alignment="CENTER" prefHeight="49.0" prefWidth="115.0" BorderPane.alignment="CENTER" />
+                  </top>
+                  <center>
+                     <VBox fx:id="menubuttoncontainer" alignment="CENTER" prefHeight="559.0" prefWidth="97.0" style="-fx-spacing: 15;" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane id="btnmenu1" prefHeight="47.0" prefWidth="115.0" style="-fx-border-color: syscolor;" styleClass="btn-menu-area-active">
+                           <children>
+                              <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M937.5 277.1c0-39.900000000000034-32.5-72.40000000000003-72.39999999999998-72.40000000000003h-730.2c-39.89999999999998 0-72.39999999999998 32.5-72.39999999999998 72.40000000000003v40.599999999999966h875v-40.599999999999966z m-874.9 162.29999999999995v283.9c-2.1316282072803006e-14 40 32.39999999999998 72.5 72.39999999999998 72.5h730c40 0 72.5-32.5 72.5-72.5v-283.9h-874.9z m268.59999999999997 253.10000000000002c0 3-2.5 5.399999999999977-5.399999999999977 5.399999999999977h-155.8c-2.9000000000000057 0-5.400000000000006-2.3999999999999773-5.400000000000006-5.399999999999977v-50.700000000000045c0-2.8999999999999773 2.5-5.399999999999977 5.400000000000006-5.399999999999977h155.8c2.8999999999999773 0 5.399999999999977 2.5 5.399999999999977 5.399999999999977v50.700000000000045z&quot;;" styleClass="btn-menu-icon-active" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="btnmenu2" layoutX="10.0" layoutY="194.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
+                           <children>
+                              <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M623.7 548.9c-3.6000000000000227-1-7.100000000000023-1.8999999999999773-10.600000000000023-2.699999999999932-30.300000000000068 18.899999999999977-66 29.899999999999977-104.30000000000001 29.899999999999977-38.80000000000001 0-75-11.200000000000045-105.5-30.700000000000045-79.80000000000001 17.600000000000023-140.3 91.20000000000005-142.2 170.5-1 41.80000000000007-1.900000000000034 83.5-1.900000000000034 125.30000000000007-0.0999999999999659 38.89999999999998-2.8999999999999773 40 17.100000000000023 45.299999999999955 0 0 255.7 59.700000000000045 465.09999999999997 0.6000000000000227 11.100000000000023-4.600000000000023 17.399999999999977-10.200000000000045 17.100000000000023-23.800000000000068-1-48.09999999999991 0.8999999999999773-96.39999999999998-1-144.5-3.1000000000000227-80.39999999999998-56.10000000000002-148.19999999999993-133.79999999999995-169.89999999999998z m-305.50000000000006-1.1000000000000227c15.900000000000034-11.799999999999955 34.10000000000002-19.399999999999977 52.60000000000002-28.299999999999955-34.10000000000002-33.69999999999999-56-79.69999999999999-58.30000000000001-130.89999999999998-1.1000000000000227 0-2.3000000000000114 0-3.5 0-38.19999999999999 0-76.30000000000001-0.9000000000000341-114.4 0.2999999999999545-45.5 1.5-84.39999999999999 13.800000000000011-116.1 37.80000000000001-14.700000000000003 11.699999999999989-76.5 70.40000000000003-78.5 226.2v76.70000000000005c63.9 20.5 129.3 34 195.9 42.5 21.900000000000006 2.7999999999999545 30.19999999999999-1.3999999999999773 29.599999999999994-25.899999999999977-2.3000000000000114-81.10000000000002 26-148.9000000000001 92.69999999999999-198.4000000000001z m679.8 14.800000000000068c-3.2000000000000455-64.60000000000002-35.5-113.20000000000005-90-146.5-63.5-38.900000000000034-134.29999999999995-25.900000000000034-203-26.900000000000034-2.5 51-24.299999999999955 96.80000000000001-58.299999999999955 130.40000000000003 31.799999999999955 13.299999999999955 59.69999999999993 30 82.79999999999995 54.19999999999993 47.299999999999955 49.60000000000002 66.20000000000005 109.20000000000005 62.10000000000002 176.70000000000005-1 16.899999999999977 3 24.399999999999977 22.199999999999932 23 57.30000000000007-4.399999999999977 112.80000000000007-15.600000000000023 166.60000000000002-36.10000000000002 13.5-5.100000000000023 20-12.199999999999932 19.600000000000023-27.799999999999955-1.3999999999999773-49 0.39999999999997726-98.10000000000002-2-147z m-488.1-31.800000000000068c80-1.1999999999999318 144.60000000000002-66.49999999999994 144.70000000000005-146.29999999999995 0-80.89999999999998-63.700000000000045-145.6-144.10000000000002-146-81.5-0.5-147.89999999999998 64.60000000000002-148.3 145.3-0.39999999999997726 79.80000000000001 68.19999999999999 148.09999999999997 147.7 146.99999999999994z m-253.09999999999997-150.79999999999995c3.099999999999966-0.30000000000001137 10.5-0.39999999999997726 17.5-1.8000000000000114 14.099999999999966-2.8999999999999773 27.399999999999977-6 38.5-12.199999999999989 4.300000000000011-61.80000000000001 37.099999999999966-115.69999999999999 85.30000000000001-148.6-0.30000000000001137-3.700000000000017-0.9000000000000341-7.5-1.6000000000000227-11.400000000000006-14.5-73.4-86-127.2-156.8-118.6-78.69999999999999 9.599999999999994-137.5 75.5-133.7 149.6 4.200000000000003 80.69999999999999 67.19999999999999 142 150.8 143z m448.2-7.899999999999977c2.2000000000000455 0.7999999999999545 4.5 1.599999999999966 7 2.2999999999999545 92.79999999999995 25.600000000000023 185.20000000000005-45.19999999999999 184.39999999999998-141.99999999999997-0.6000000000000227-76.6-56.5-136.8-134.79999999999995-145.2-69-7.40000000000002-138.30000000000007 44.49999999999997-154.20000000000005 115.19999999999999-0.6000000000000227 2.299999999999983-1 4.5-1.1999999999999318 6.699999999999989 57.09999999999991 32.599999999999994 96.19999999999993 93.1 98.79999999999995 163.00000000000003z&quot;;" styleClass="btn-menu-icon" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="btnmenu3" layoutX="10.0" layoutY="380.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
+                           <children>
+                              <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot; &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot;;" styleClass="btn-menu-icon" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="btnmenu4" layoutX="10.0" layoutY="411.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
+                           <children>
+                              <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot; &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot;;" styleClass="btn-menu-icon" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     </VBox>
+                  </center>
+                  <bottom>
+                     <HBox alignment="CENTER" prefHeight="128.0" prefWidth="115.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #F6F8FB; -fx-padding: 10 9 10 9; -fx-background-radius: 100%;">
+                           <children>
+                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="17.0" prefWidth="20.0" style="-fx-shape: &quot;M937.4 408.2c-23.699999999999932 13.600000000000023-45.69999999999993 26.19999999999999-67.69999999999993 38.80000000000001-10.700000000000045 6.100000000000023-21.700000000000045 11.899999999999977-32 18.69999999999999-3 2-5.800000000000068 6.800000000000011-5.900000000000091 10.400000000000034-0.599999999999909 15.5 0.10000000000002274 31-0.39999999999997726 46.39999999999998-0.1999999999999318 6.100000000000023 1.7000000000000455 9.399999999999977 7 12.399999999999977 29.300000000000068 16.399999999999977 58.30000000000007 33.10000000000002 87.39999999999998 49.80000000000007 3.300000000000068 1.8999999999999773 6.5 4 11.700000000000045 7.2999999999999545-9.100000000000023 25.799999999999955-18 51.60000000000002-27.600000000000023 77.20000000000005-1 2.699999999999932-6.199999999999932 5.699999999999932-9.199999999999932 5.399999999999977-32.80000000000007-2.7000000000000455-65.60000000000002-5.7000000000000455-98.20000000000005-9.5-10.799999999999955-1.2000000000000455-18.200000000000045-0.39999999999997726-24.299999999999955 10.399999999999977-6.2000000000000455 11.299999999999955-15.200000000000045 21.100000000000023-23.600000000000023 31.100000000000023-4 4.899999999999977-4.899999999999977 8.600000000000023-2.1000000000000227 14.799999999999955 15.299999999999955 33.200000000000045 30 66.60000000000002 45.89999999999998 102.39999999999998-23.5 15.900000000000091-47 32.10000000000002-70.79999999999995 47.700000000000045-2 1.2999999999999545-7.300000000000068-0.10000000000002274-9.600000000000023-2-26.5-22.299999999999955-52.700000000000045-44.799999999999955-78.79999999999995-67.60000000000002-4.800000000000068-4.199999999999932-8.5-5.2999999999999545-14.900000000000091-2.8999999999999773-14.199999999999932 5.2999999999999545-28.699999999999932 9.700000000000045-43.39999999999998 13.5-6.7999999999999545 1.7999999999999545-9.600000000000023 4.899999999999977-11.100000000000023 11.700000000000045-7.699999999999932 35.299999999999955-15.899999999999977 70.39999999999998-24.299999999999955 107.09999999999991h-91.5c-8.300000000000011-36.299999999999955-16.600000000000023-71.39999999999998-24.100000000000023-106.69999999999993-1.599999999999966-7.399999999999977-4.899999999999977-10.300000000000068-11.899999999999977-12.100000000000023-14.300000000000011-3.7999999999999545-28.5-8.100000000000023-42.30000000000001-13.399999999999977-6.300000000000011-2.3999999999999773-10-1.7000000000000455-15 2.6000000000000227-26 22.799999999999955-52.30000000000001 45.299999999999955-78.80000000000001 67.59999999999991-2.5 2.1000000000000227-8.299999999999955 3.5-10.399999999999977 2.1000000000000227-23.599999999999994-15.399999999999977-46.69999999999999-31.5-70.19999999999999-47.5 15.599999999999994-34.69999999999993 30-67.39999999999998 45-99.89999999999998 3.5999999999999943-7.7999999999999545 2.799999999999983-12.899999999999977-2.8000000000000114-19.399999999999977-9-10.300000000000068-17.099999999999994-21.5-24.599999999999994-33-3.9000000000000057-5.899999999999977-8-7.7000000000000455-14.700000000000017-7-33.39999999999998 3.5-66.89999999999998 6.399999999999977-100.29999999999998 10-7.900000000000006 0.7999999999999545-13 0.39999999999997726-15.900000000000006-8.600000000000023-8-24.600000000000023-16.799999999999997-49-25.5-73.89999999999998 4.700000000000003-3 7.799999999999997-5.2000000000000455 11.099999999999994-7.100000000000023 29.10000000000001-16.700000000000045 58.20000000000002-33.39999999999998 87.4-49.799999999999955 5.699999999999989-3.2000000000000455 7.800000000000011-6.600000000000023 7.5-13.200000000000045-0.5999999999999943-14.800000000000011-0.5999999999999943-29.600000000000023 0-44.30000000000001 0.30000000000001137-6.5-1.6999999999999886-10.099999999999966-7.400000000000006-13.300000000000011-29.599999999999994-16.599999999999966-58.89999999999999-33.5-88.3-50.39999999999998-2.700000000000003-1.6000000000000227-5.3999999999999915-3.1999999999999886-10.399999999999999-6.199999999999989 9.300000000000004-26.19999999999999 18.4-52.60000000000002 28.199999999999996-78.80000000000001 0.8000000000000114-2.1999999999999886 6.1000000000000085-4.300000000000011 9.100000000000009-4.100000000000023 32.8 2.8000000000000114 65.60000000000001 5.7000000000000455 98.2 9.600000000000023 11 1.3000000000000114 18.099999999999994-0.30000000000001137 24-10.899999999999977 6.099999999999994-10.900000000000034 14.799999999999983-20.600000000000023 23-30.200000000000045 4.400000000000006-5.199999999999989 5.299999999999983-9.299999999999955 2.299999999999983-15.699999999999989-15.299999999999983-33.099999999999994-29.899999999999977-66.5-45.79999999999998-101.89999999999998 23.400000000000006-16 46.599999999999994-32 70.1-47.400000000000006 2.1999999999999886-1.4000000000000057 8-0.09999999999999432 10.5 2 26.5 22.299999999999983 52.80000000000001 44.79999999999998 78.80000000000001 67.6 4.899999999999977 4.300000000000011 8.699999999999989 5 14.899999999999977 2.6999999999999886 14.199999999999989-5.299999999999983 28.80000000000001-9.599999999999994 43.400000000000034-13.599999999999994 6.099999999999966-1.6999999999999886 9.299999999999955-4.299999999999983 10.699999999999989-10.799999999999983 7.699999999999989-35.30000000000001 15.899999999999977-70.60000000000001 24.30000000000001-107.60000000000001h91.60000000000002c8.299999999999955 36.39999999999999 16.5 71.49999999999999 24.199999999999932 106.8 1.5 6.800000000000011 4.399999999999977 9.800000000000011 11.100000000000023 11.599999999999994 14.600000000000023 3.9000000000000057 29.200000000000045 8.400000000000006 43.39999999999998 13.5 5.800000000000068 2.0999999999999943 9.5 1.9000000000000057 14.200000000000045-2.1999999999999886l78.5-67.9c4.2999999999999545-3.799999999999997 7.5-5.400000000000006 12.699999999999932-1.6999999999999886 22.5 15.699999999999989 45.30000000000007 31.099999999999994 68.60000000000002 47-11.199999999999932 25.099999999999994-21.600000000000023 48.39999999999998-32 71.69999999999999-4.699999999999932 10.600000000000023-9.100000000000023 21.30000000000001-14.299999999999955 31.69999999999999-2.7000000000000455 5.300000000000011-1.5 8.800000000000011 1.8999999999999773 13.100000000000023 9.399999999999977 11.899999999999977 18.799999999999955 23.80000000000001 27.299999999999955 36.30000000000001 3.7000000000000455 5.5 7.5 7.2999999999999545 13.800000000000068 6.599999999999966 33.39999999999998-3.3999999999999773 66.89999999999998-6.199999999999989 100.29999999999995-10 8.700000000000045-1 13.700000000000045 0.19999999999998863 16.600000000000023 9.100000000000023 8.100000000000023 24.5 16.799999999999955 48.89999999999998 25.399999999999977 73.89999999999998z m-291.79999999999995 95.90000000000003c2.199999999999932-77.20000000000005-61.200000000000045-143.90000000000003-138.60000000000002-145.8-83.60000000000002-2-150 58.19999999999999-152.39999999999998 138.3-2.3000000000000114 76.10000000000002 61.5 142.69999999999993 138.59999999999997 144.69999999999993 82.80000000000001 2.300000000000068 150.09999999999997-58.299999999999955 152.40000000000003-137.19999999999993z&quot;;" styleClass="btn-menu-icon" />
+                           </children>
+                        </HBox>
+                     </children>
+                     </HBox>
+                  </bottom>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.7599999904632568" green="0.8799999952316284" blue="1.0" opacity="0.19083969295024872" />
+                     </color>
+                  </DropShadow>
+               </effect>
+                  
+            </BorderPane>
+         </left>
+         <stylesheets>
+            <URL value="@main.css" />
+            <URL value="@light.css" />
+         </stylesheets>
+      </BorderPane>
+   </center>
+</BorderPane>
