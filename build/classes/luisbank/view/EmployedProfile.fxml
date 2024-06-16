@@ -3,6 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -36,8 +37,8 @@
                                  <children>
                                     <Label layoutX="13.0" layoutY="32.0" styleClass="rotulo" text="DADOS DA AGÊNCIA" />
                                     <Label layoutX="13.0" layoutY="54.0" minHeight="-Infinity" styleClass="rotulo" text="Transferir para outra agência" />
-                                    <ComboBox layoutX="15.0" layoutY="80.0" prefHeight="31.0" prefWidth="247.0" promptText="Selecciona a agência" style="-fx-background-color: colorbase;" styleClass="input" />
-                                    <HBox fx:id="btnimg1" alignment="CENTER" layoutX="12.0" layoutY="141.0" prefHeight="33.0" prefWidth="251.0" styleClass="btn-transparent">
+                                    <ComboBox fx:id="comboagency" layoutX="15.0" layoutY="80.0" prefHeight="31.0" prefWidth="247.0" promptText="Selecciona a agência" style="-fx-background-color: colorbase;" styleClass="input" />
+                                    <HBox fx:id="btntransfere" alignment="CENTER" layoutX="12.0" layoutY="141.0" prefHeight="33.0" prefWidth="251.0" styleClass="btn-transparent">
                                        <children>
                                           <Label fx:id="btnimage1" styleClass="btn-text" text="Salvar Transferência">
                                              <font>
@@ -51,7 +52,7 @@
                               <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="174.0" prefWidth="276.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
                                  <children>
                                     <Label layoutX="13.0" layoutY="32.0" styleClass="rotulo" text="DADOS DA AGÊNCIA" />
-                                    <Label layoutX="13.0" layoutY="54.0" minHeight="-Infinity" prefHeight="100.0" prefWidth="259.0" style="-fx-background-color: colorbase; -fx-padding: 10;" styleClass="rotulo" text="Podes Fazer Transferência deste funcionário para uma outra agência existente no sistema" textAlignment="JUSTIFY" wrapText="true" />
+                                    <Label fx:id="labelsmsagency" layoutX="13.0" layoutY="54.0" minHeight="-Infinity" prefHeight="100.0" prefWidth="259.0" style="-fx-background-color: colorbase; -fx-padding: 10;" styleClass="rotulo" text="Podes Fazer Transferência deste funcionário para uma outra agência existente no sistema" textAlignment="JUSTIFY" wrapText="true" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -59,20 +60,20 @@
                         <AnchorPane layoutX="131.0" layoutY="69.0" maxHeight="-Infinity" prefHeight="439.0" prefWidth="447.0" style="-fx-background-color: colormain;">
                            <children>
                               <Label layoutX="15.0" layoutY="154.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Nome" />
-                              <TextField fx:id="inputname1" layoutX="15.0" layoutY="170.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <TextField fx:id="inputname" layoutX="15.0" layoutY="170.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="257.0" layoutY="159.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Agência" />
-                              <TextField fx:id="inputlocal1" disable="true" layoutX="257.0" layoutY="175.0" prefHeight="31.0" prefWidth="149.0" promptText="Agencia" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <TextField fx:id="inputagency" disable="true" layoutX="257.0" layoutY="175.0" prefHeight="31.0" prefWidth="149.0" promptText="Agencia" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="14.0" layoutY="217.0" styleClass="rotulo" text="INFORMAÇÕES DE CONTACTO" />
                               <Label layoutX="18.0" layoutY="247.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 1" />
                               <TextField fx:id="inputcontact1" layoutX="18.0" layoutY="263.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto principal" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="257.0" layoutY="240.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 2" />
-                              <TextField fx:id="inputcontact21" layoutX="257.0" layoutY="256.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <TextField fx:id="inputcontact2" layoutX="257.0" layoutY="256.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <AnchorPane fx:id="img" layoutX="209.0" layoutY="49.0" maxHeight="43.0" maxWidth="49.0" prefHeight="43.0" prefWidth="49.0" styleClass="avatar" />
-                              <Label layoutX="18.0" layoutY="91.0" style="-fx-font-size: 18; -fx-text-fill: textcolor;" styleClass="rotulo" text="Luis Domingos Marques" />
-                              <Label layoutX="18.0" layoutY="120.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="luismarques_@99" />
+                              <Label fx:id="name" layoutX="18.0" layoutY="91.0" style="-fx-font-size: 18; -fx-text-fill: textcolor;" styleClass="rotulo" text="Luis Domingos Marques" />
+                              <Label fx:id="email" layoutX="18.0" layoutY="120.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="luismarques_@99" />
                               <Label layoutX="18.0" layoutY="305.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Morada" />
-                              <TextField fx:id="inputlocal11" layoutX="18.0" layoutY="321.0" prefHeight="31.0" prefWidth="149.0" promptText="Morada" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
-                              <HBox fx:id="btnimg111" alignment="CENTER" layoutX="284.0" layoutY="386.0" prefHeight="33.0" prefWidth="132.0" styleClass="btn-transparent">
+                              <TextField fx:id="inputlocal" disable="true" layoutX="18.0" layoutY="321.0" prefHeight="31.0" prefWidth="149.0" promptText="Morada" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <HBox fx:id="btnchangedata" alignment="CENTER" layoutX="284.0" layoutY="386.0" prefHeight="33.0" prefWidth="132.0" styleClass="btn-transparent">
                                  <children>
                                     <Label fx:id="btnimage111" styleClass="btn-text" text="Salvar">
                                        <font>
@@ -81,12 +82,14 @@
                                     </Label>
                                  </children>
                               </HBox>
+                              <Label fx:id="labelsmssucess" layoutX="19.0" layoutY="380.0" minHeight="-Infinity" opacity="0.36" prefHeight="45.0" prefWidth="171.0" style="-fx-background-color: #239443; -fx-text-fill: white; -fx-padding: 10;" styleClass="rotulo" text="Sucesso!" textAlignment="JUSTIFY" visible="false" wrapText="true" />
                            </children>
                         </AnchorPane>
                         <AnchorPane maxHeight="-Infinity" prefHeight="317.0" prefWidth="276.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
                            <children>
+                              <PasswordField fx:id="pass" layoutX="20.0" layoutY="141.0" promptText="Nova senha" styleClass="input" />
                               <Label layoutX="13.0" layoutY="32.0" styleClass="rotulo" text="SEGURANÇA DA CONTA" />
-                              <HBox fx:id="btnimg11" alignment="CENTER" layoutX="13.0" layoutY="270.0" prefHeight="33.0" prefWidth="251.0" styleClass="btn-transparent">
+                              <HBox fx:id="btnpass" alignment="CENTER" layoutX="13.0" layoutY="270.0" prefHeight="33.0" prefWidth="251.0" styleClass="btn-transparent">
                                  <children>
                                     <Label fx:id="btnimage11" styleClass="btn-text" text="Definir">
                                        <font>
@@ -96,10 +99,9 @@
                                  </children>
                               </HBox>
                               <Label layoutX="14.0" layoutY="59.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Senha actual" />
-                              <TextField fx:id="inputcontact11" layoutX="14.0" layoutY="75.0" prefHeight="31.0" prefWidth="149.0" promptText="Senha antiga" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="20.0" layoutY="125.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Nova senha" />
-                              <TextField fx:id="inputcontact111" layoutX="20.0" layoutY="141.0" prefHeight="31.0" prefWidth="149.0" promptText="Nova senha" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
-                              <Label layoutX="13.0" layoutY="189.0" minHeight="-Infinity" prefHeight="73.0" prefWidth="251.0" style="-fx-background-color: colorbase; -fx-padding: 10;" styleClass="rotulo" text="A senha actual é só para não administradores" textAlignment="JUSTIFY" wrapText="true" />
+                              <Label fx:id="labelsmspass" layoutX="13.0" layoutY="189.0" minHeight="-Infinity" prefHeight="73.0" prefWidth="251.0" style="-fx-background-color: colorbase; -fx-padding: 10;" styleClass="rotulo" text="A senha actual é só para não administradores" textAlignment="JUSTIFY" wrapText="true" />
+                              <PasswordField fx:id="pass1" layoutX="13.0" layoutY="75.0" promptText="Senha antiga" styleClass="input" />
                            </children>
                         </AnchorPane>
                      </children>

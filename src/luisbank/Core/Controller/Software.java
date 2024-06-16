@@ -262,7 +262,7 @@ public class Software  {
    }
 
  
-    private static boolean isAdmin(){
+    public static boolean isAdmin(){
         if(logged_emplyed instanceof Admin)
             return true;
         System.out.println("Faça login com admin Válido");
