@@ -48,6 +48,7 @@ public class Software  {
             }
         }
         agencies.put(agency.getCode() , agency);
+        saveAgencyState();
         return true;
    }
 
@@ -133,7 +134,7 @@ public class Software  {
             if(agency2.hasClientWithSameCode(client.getCode()) instanceof IClient)
                 return false;
         agency.appendClient(client);
-       
+       saveAgencyState();
         return true;
    }
 
@@ -210,12 +211,13 @@ public class Software  {
         if(!(from.checkEmployedEmail(email) instanceof Employed))
             return false; //nao pertence nesta origem
         to.appendEmployed(from.removeEmployed(email));
-      
+        saveAgencyState();
         return true;
    }
 
    public static void removeAgency(String code){
         agencies.remove(code);
+        saveAgencyState();
    }
 
    //login de funcionários de agencias

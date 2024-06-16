@@ -18,7 +18,7 @@
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="61.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="61.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="761.0" minWidth="10.0" prefWidth="761.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="79.0" />
         </columnConstraints>
@@ -28,8 +28,8 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 40 0 0 0;" GridPane.columnIndex="1">
                <children>
-                  <Label styleClass="title" text="Criar Funcionário da agência" />
-                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="448.0" prefWidth="619.0" style="-fx-spacing: 20; -fx-padding: 20 0 0 30;">
+                  <Label style="-fx-padding: 0;" styleClass="title" text="Criar Funcionário da agência" />
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="448.0" prefWidth="619.0" style="-fx-spacing: 20; -fx-padding: 30 0;">
                      <children>
                         <AnchorPane maxHeight="-Infinity" prefHeight="379.0" prefWidth="288.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
                            <children>
@@ -46,18 +46,18 @@
                         </AnchorPane>
                         <AnchorPane layoutX="131.0" layoutY="69.0" maxHeight="-Infinity" prefHeight="372.0" prefWidth="429.0" style="-fx-background-color: colormain;">
                            <children>
-                              <HBox fx:id="btnsave" alignment="CENTER" layoutX="14.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" style="-fx-background-color: syscolor;">
+                              <HBox fx:id="btnsave" alignment="CENTER" layoutX="14.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" styleClass="btn-default">
                                  <children>
-                                    <Label style="-fx-text-fill: white;" text="Salvar">
+                                    <Label styleClass="btn-text" text="Salvar">
                                        <font>
                                           <Font size="11.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" layoutX="81.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" style="-fx-background-color: transparent; -fx-border-color: syscolor;">
+                              <HBox alignment="CENTER" layoutX="81.0" layoutY="309.0" prefHeight="33.0" prefWidth="59.0" styleClass="btn-transparent">
                                  <children>
-                                    <Label fx:id="btncancel1" style="-fx-text-fill: syscolor;" text="Cancelar">
+                                    <Label fx:id="btncancel1" styleClass="btn-text" text="Cancelar">
                                        <font>
                                           <Font size="11.0" />
                                        </font>
@@ -66,7 +66,7 @@
                               </HBox>
                               <Label layoutX="10.0" layoutY="98.0" styleClass="rotulo" text="DADOS PESSOAIS" />
                               <Label layoutX="14.0" layoutY="128.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Nome" />
-                              <TextField fx:id="inputname" layoutX="14.0" layoutY="144.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                              <TextField fx:id="inputname" layoutX="14.0" layoutY="144.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase;" styleClass="input" />
                               <Label layoutX="256.0" layoutY="133.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Morada" />
                               <TextField fx:id="inputlocal" layoutX="256.0" layoutY="149.0" prefHeight="31.0" prefWidth="149.0" promptText="Morada" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="14.0" layoutY="198.0" styleClass="rotulo" text="INFORMAÇÕES DE CONTACTO" />
@@ -74,9 +74,9 @@
                               <TextField fx:id="inputcontact" layoutX="18.0" layoutY="244.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto principal" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                               <Label layoutX="257.0" layoutY="221.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 2" />
                               <TextField fx:id="inputcontact2" layoutX="257.0" layoutY="237.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
-                              <HBox fx:id="btnimage" alignment="CENTER" layoutX="284.0" layoutY="29.0" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: transparent; -fx-border-color: syscolor;">
+                              <HBox fx:id="btnimg" alignment="CENTER" layoutX="284.0" layoutY="29.0" prefHeight="33.0" prefWidth="121.0" styleClass="btn-transparent">
                                  <children>
-                                    <Label fx:id="btnimg" style="-fx-text-fill: syscolor;" text="Buscar Imagem">
+                                    <Label styleClass="btn-text" text="Buscar Imagem">
                                        <font>
                                           <Font size="11.0" />
                                        </font>

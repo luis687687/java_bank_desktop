@@ -41,6 +41,7 @@ public class LoginGUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        new Software();
         
         btntheme.setOnMouseClicked( event -> {
             Manipulations.isLight = !Manipulations.isLight;
@@ -63,7 +64,7 @@ public class LoginGUIController implements Initializable {
             String email = inputemail.getText();
             String password = inputpass.getText();
             
-           
+            System.out.println("kk "+email+" e "+password);
             if(Software.login(email, password)){
                 loginsms.setText("Bem sucedido!");
                 loginsms.setStyle("-fx-text-fill: syscolor");

@@ -38,8 +38,14 @@ public class Agency implements Serializable{
     public IClient getSelectedClient(){
         return this.selected_client;
     }
+    public void setSelectedEmployed(String email){
+        this.selected_employed = (Employed)this.employeds.get(email);
+    }
     public Employed getSelectEmployed(){
         return this.selected_employed;
+    }
+    public Employed getEmployed(String email){
+        return (Employed)this.employeds.get(email);
     }
 
     // public boolean selectedClientDeposit(double money){

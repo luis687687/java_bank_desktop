@@ -19,6 +19,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import luisbank.Core.Controller.Software;
 
 /**
  *
@@ -35,31 +36,18 @@ public class GUIController implements Initializable {
     @FXML private BorderPane main, areabody;
     @FXML private VBox menubuttoncontainer;
     @FXML private GridPane rightarea;
+    @FXML private AnchorPane btnlogout;
     
     
    
-    
-   
-    
-    @FXML
-
+  
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         luisbank.LuisBank.mainElement = main;
 
-//        try{
-//            luisbank.LuisBank.centerElment = main.getCenter();
-//            luisbank.LuisBank.sideBar = main.getLeft();
-//            Parent loginFXML = FXMLLoader.load(super.getClass().getResource("LoginGUI.fxml"));           
-//            main.getChildren().clear();
-//            main.setCenter((Node)loginFXML);
-//            
-//        }
-//        catch(Exception ex) {
-//            System.out.println(ex + " Excepção");
-//        }
-        openScene("btnmenu4");
+
+       
         menubuttoncontainer.getChildren().forEach(child -> {
           
             child.setOnMouseClicked(event -> {
@@ -73,8 +61,26 @@ public class GUIController implements Initializable {
             });
             
         });
+        btnlogout.setOnMouseClicked( event -> {
+            logout();
+        });
         
       
+    }
+    
+    public void logout(){
+        try{
+            luisbank.LuisBank.centerElment = main.getCenter();
+            luisbank.LuisBank.sideBar = main.getLeft();
+            Parent loginFXML = FXMLLoader.load(super.getClass().getResource("LoginGUI.fxml"));           
+            main.getChildren().clear();
+            main.setCenter((Node)loginFXML);
+            Software.saveAgencyState();
+            Software.saveAdminState();
+        }
+        catch(Exception ex) {
+            System.out.println(ex + " Excepção");
+        }
     }
     public void activa(Node element){
         element.setStyle("-fx-border-color: syscolor");
@@ -105,7 +111,23 @@ public class GUIController implements Initializable {
                 areabody.getChildren().clear();
                 areabody.setCenter(fxml);
                 break;
-            case "btnmenu1":
+             case "btnmenu5":
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListAgencyAndEmployeds.fxml"));
+                fxml = loader.load();
+                ListAgencyAndEmployedsController controller = loader.getController();
+                controller.setParentController(this);
+                
+                areabody.getChildren().clear();
+                areabody.setCenter(fxml);
+                break;
+             case "profile_employed":
+                System.out.println("Chamado 2222 !!!");
+                fxml = FXMLLoader.load(getClass().getResource("EmployedProfile.fxml"));
+                areabody.getChildren().clear();
+                areabody.setCenter(fxml);
+                System.out.println("Chamado!!!");
+                break;
+             case "btnmenu1":
                 areabody.getChildren().clear();
                 areabody.setCenter(areabody1);
                 break;
@@ -118,5 +140,9 @@ public class GUIController implements Initializable {
             
         }
     }
+    public void openEmplyedProfile(){
+        openScene("profile_employed");
+    }
+
     
 }

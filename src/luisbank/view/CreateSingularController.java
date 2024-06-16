@@ -15,6 +15,7 @@ import javafx.stage.FileChooser.*;
 import javafx.stage.Stage;
 import java.io.File;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 
 /**
@@ -30,13 +31,15 @@ public class CreateSingularController implements Initializable {
     
     @FXML private HBox btnimg;
     @FXML private AnchorPane img;
+    @FXML private BorderPane main;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
         btnimg.setOnMouseClicked( event -> {
             FileChooser filer = new FileChooser();
-           
+            
             filer.setTitle("Escolha uma imagem");
             filer.getExtensionFilters().add(new ExtensionFilter("Ficheiros de imagem", "*.png"));
             filer.getExtensionFilters().add(new ExtensionFilter("Ficheiros de imagem", "*.jpg"));

@@ -36,7 +36,7 @@ public class CreateEmployedController implements Initializable {
     @FXML private ComboBox<String> inputagency;
     @FXML private PasswordField  inputpass;
     @FXML private DatePicker inputdate;
-    @FXML private HBox btnsave;
+    @FXML private HBox btnsave, btnimg;
     @FXML private Label smserror;
     
     @Override
@@ -70,10 +70,12 @@ public class CreateEmployedController implements Initializable {
         String password = inputpass.getText();
         String phone = inputcontact.getText();
         String optionalphone = inputcontact2.getText();
+        String name = inputname.getText();
+        String local = inputlocal.getText();
         
         if(agency != null){
             
-            Employed empl = new Employed(email, password, phone, optionalphone);
+            Employed empl = new Employed(email, password, phone, optionalphone, name);
             if(Software.actualAgencyAppendEmployed(empl)){
                 System.out.println("Sucesso!");
                 

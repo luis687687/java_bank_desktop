@@ -18,8 +18,8 @@
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="61.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="761.0" minWidth="10.0" prefWidth="761.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="61.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="761.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="79.0" />
         </columnConstraints>
         <rowConstraints>
@@ -28,8 +28,8 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 40 0 0 0;" GridPane.columnIndex="1">
                <children>
-                  <Label styleClass="title" text="Criar conta Bancária de Pessoa Singular" />
-                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="448.0" prefWidth="619.0" style="-fx-spacing: 20; -fx-padding: 20 0 0 30;">
+                  <Label style="-fx-padding: 0;" styleClass="title" text="Criar conta Bancária de Pessoa Singular" />
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="448.0" prefWidth="619.0" style="-fx-spacing: 20; -fx-padding: 30 0 0 0;">
                      <children>
                         <AnchorPane maxHeight="-Infinity" prefHeight="173.0" prefWidth="276.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
                            <children>

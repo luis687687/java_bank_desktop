@@ -104,7 +104,7 @@ public class Main {
                             System.out.println("A passe: ");
                             String pass = sc.nextLine();
 
-                            Employed costumer = new Employed(email, pass, "922299", "" );
+                            Employed costumer = new Employed(email, pass, "922299", "", "Nome" );
 
                             Software.actualAgencyAppendEmployed(costumer);
                             
@@ -158,7 +158,7 @@ public class Main {
                                         if(response_str.equals("8")){
                                             System.out.println("Add admin");
                                             System.out.println("Email e senha");
-                                            Admin admin = new Admin(sc.nextLine(), sc.nextLine(), "", "");
+                                            Admin admin = new Admin(sc.nextLine(), sc.nextLine(), "", "", "Nome");
                                             Software.appendAdmin(admin);
                                          }
                                          else{

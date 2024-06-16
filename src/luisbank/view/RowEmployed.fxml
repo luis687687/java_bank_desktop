@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="row" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="581.0" style="-fx-alignment: center; -fx-background-color: colormain;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.RowEmployedController">
+  <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="69.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="135.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="96.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="141.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="141.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="18.0" minWidth="19.0" prefHeight="18.0" prefWidth="19.0" style="-fx-background-color: syscolor;" styleClass="avatar" />
+      <Label fx:id="empname" layoutX="142.0" layoutY="67.0" prefHeight="17.0" prefWidth="115.0" styleClass="empname" text="Luis Domingos Marques" GridPane.columnIndex="1" />
+      <Label fx:id="empagency" layoutX="262.0" layoutY="67.0" styleClass="empagency" text="Agência" GridPane.columnIndex="2" />
+      <Label layoutX="241.0" layoutY="17.0" styleClass="empphone" GridPane.columnIndex="3" />
+      <Label layoutX="241.0" layoutY="17.0" styleClass="empemail" text="code" GridPane.columnIndex="4" />
+   </children>
+   <stylesheets>
+      <URL value="@main.css" />
+      <URL value="@light.css" />
+   </stylesheets>
+</GridPane>

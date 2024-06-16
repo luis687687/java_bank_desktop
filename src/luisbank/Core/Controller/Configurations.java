@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Configurations implements Serializable {
     public static  String FILE_ADMINS = "./admins.ser";
     public static  String FILE_AGENCIES = "./agencies.ser";
-    public static  Admin defaultadmin = new Admin("luis", "1234", "929723051", "951110648");
+    public static  Admin defaultadmin = new Admin("luis", "1234", "929723051", "951110648", "Luis Domingos Marques");
     public static  String defaultibancode = "LM";
     ///
     public static final String mov_type_deposit = "Depósito";
