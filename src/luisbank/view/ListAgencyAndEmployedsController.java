@@ -44,7 +44,7 @@ public class ListAgencyAndEmployedsController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
        try{
-            new Software();
+            
             btnaddagenc.setOnMouseClicked(event -> {
                 String agencyname = inputagencyname.getText();
                 Software.appendAgency(new Agency(agencyname));

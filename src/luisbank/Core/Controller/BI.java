@@ -13,7 +13,15 @@ public class BI implements Serializable{
     public String dateborn;
     public String image;
 
-    
+    public BI(String name, String numberbi, String localborn, String dateborn){
+        this.fullname = name;
+        this.number = numberbi;
+        this.localborn = localborn;
+        this.dateborn = dateborn;
+    }
+    public String getLocal(){
+        return this.localborn;
+    }
     public void setNumber(String number){
         
         // Pattern pattern = Pattern.compile("[0-9]{9}[a-zAZ]{2}[0-9]{3}");

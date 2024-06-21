@@ -16,4 +16,5 @@ public class Person implements Serializable{
     public boolean checkActived(){
         return this.actived;
     }
+    
 }

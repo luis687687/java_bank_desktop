@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import luisbank.Core.Controller.Software;
+import luisbank.view.GUIController;
 
 /**
  *
@@ -27,6 +28,7 @@ public class LuisBank extends Application {
     public static Node centerElment;
     public static Node mainElement;
     public static Node sideBar;
+    public static GUIController mainController;
     
     
     
@@ -36,7 +38,7 @@ public class LuisBank extends Application {
       
       Parent elemento = FXMLLoader.load(super.getClass().getResource("view/MainGUI.fxml"));
       
-      
+      new Software();
       mainScene = new Scene(elemento);
       mainStage = stage;
       mainStage.setScene(mainScene);

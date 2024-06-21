@@ -14,7 +14,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="561.0" prefWidth="927.0" style="-fx-background-color: colorbase;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.CreateEmployedController">
+<BorderPane prefHeight="561.0" prefWidth="927.0" style="-fx-background-color: colorbase;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="luisbank.view.CreateEmployedController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>

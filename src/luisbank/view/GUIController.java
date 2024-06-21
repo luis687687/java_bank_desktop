@@ -4,7 +4,9 @@
  */
 package luisbank.view;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,7 +21,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import luisbank.Core.Controller.IClient;
+import luisbank.Core.Controller.Moviment;
 import luisbank.Core.Controller.Software;
+import sun.util.calendar.BaseCalendar;
 
 /**
  *
@@ -33,10 +38,11 @@ public class GUIController implements Initializable {
     private Label texto2;
     @FXML
     private GridPane area1, areabody1;
-    @FXML private BorderPane main, areabody;
-    @FXML private VBox menubuttoncontainer;
+    @FXML private BorderPane main, areabody, hometable;
+    @FXML private VBox menubuttoncontainer, hometablebody;
     @FXML private GridPane rightarea;
     @FXML private AnchorPane btnlogout;
+    
     
     
    
@@ -45,8 +51,9 @@ public class GUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         luisbank.LuisBank.mainElement = main;
+        luisbank.LuisBank.mainController = this;
 
-
+        logout();
        
         menubuttoncontainer.getChildren().forEach(child -> {
           
@@ -62,10 +69,80 @@ public class GUIController implements Initializable {
             
         });
         btnlogout.setOnMouseClicked( event -> {
-            logout();
+            logoutAndSave();
         });
         
       
+    }
+    
+    public void loadTable(){
+        
+        try{
+            
+        
+            FXMLLoader fx = new FXMLLoader();
+            Parent element = fx.load(getClass().getResource("RowHomeHistory.fxml"));
+            hometable.getChildren().clear(); 
+            hometable.setTop(element);
+            hometable.setCenter(hometablebody);
+            if(Software.getActualAgency() == null)
+                    return;
+            int cont  = 0;
+            for(IClient client : Software.getActualAgency().getClients().values()){
+                client.getAccount().getMoney(); //só para update
+                
+                for(Moviment mov : client.getAccount().getMoviments()){
+                    cont++;
+                    FXMLLoader fx2 = new FXMLLoader();
+                    Parent element1 = fx2.load(getClass().getResource("RowHomeHistory.fxml"));
+                    System.out.println(mov);
+                    GridPane el = (GridPane)element1;
+                   if(cont == 5)
+                       break;
+                    for(Node child : el.getChildren()){
+                         Label text = (Label)child;
+                         
+                    if(text.getStyleClass().contains("tbdescri")){
+                        System.out.println("Descrição");
+                        text.setText(mov.getType());
+                    }
+                    else{
+                        if(text.getStyleClass().contains("tbinicio")){
+                            text.setText(mov.getNormalDateStart());
+                            System.out.println("Data1");
+                        }
+                        else{
+                            if(text.getStyleClass().contains("tbtermin")){
+                                text.setText(mov.getNormalDateEnd());
+                                
+                            }
+                            else{
+                                if(text.getStyleClass().contains("tbconta")){
+                                    text.setText(client.getAccount().getIban());
+                                    System.out.println("Conta");
+                                }else{
+                                    if(text.getStyleClass().contains("tbvalor")){
+                                        text.setText(Double.toString(mov.getValue()));
+                                        System.out.println("Valor");
+                                    }
+                                }
+                            }
+                        }
+                        }
+                     }
+                     hometablebody.getChildren().add(el);
+                     System.out.println("Printed'''");
+                    
+                   
+                }
+
+                
+            }
+        }
+        catch(IOException ex){
+            
+        }
+        
     }
     
     public void logout(){
@@ -75,12 +152,16 @@ public class GUIController implements Initializable {
             Parent loginFXML = FXMLLoader.load(super.getClass().getResource("LoginGUI.fxml"));           
             main.getChildren().clear();
             main.setCenter((Node)loginFXML);
-            Software.saveAgencyState();
-            Software.saveAdminState();
+        
         }
         catch(Exception ex) {
             System.out.println(ex + " Excepção");
         }
+    }
+    public void logoutAndSave(){
+        logout();
+        Software.saveAgencyState();
+        Software.saveAdminState();
     }
     public void activa(Node element){
         element.setStyle("-fx-border-color: syscolor");
@@ -102,7 +183,7 @@ public class GUIController implements Initializable {
         try{
            switch(id){
             case "btnmenu2":
-                fxml = FXMLLoader.load(getClass().getResource("CreateSingular.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("CreateClient.fxml"));
                 areabody.getChildren().clear();
                 areabody.setCenter(fxml);
                 break;
@@ -111,7 +192,13 @@ public class GUIController implements Initializable {
                 areabody.getChildren().clear();
                 areabody.setCenter(fxml);
                 break;
-             case "btnmenu5":
+          case "seeclients":
+                
+                fxml = FXMLLoader.load(getClass().getResource("ClientProfile.fxml"));
+                areabody.getChildren().clear();
+                areabody.setCenter(fxml);
+                break;
+             case "listagency":
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ListAgencyAndEmployeds.fxml"));
                 fxml = loader.load();
                 ListAgencyAndEmployedsController controller = loader.getController();
@@ -121,15 +208,18 @@ public class GUIController implements Initializable {
                 areabody.setCenter(fxml);
                 break;
              case "profile_employed":
-                System.out.println("Chamado 2222 !!!");
-                fxml = FXMLLoader.load(getClass().getResource("EmployedProfile.fxml"));
+                FXMLLoader loader2 = new FXMLLoader(getClass().getResource("EmployedProfile.fxml"));
+                fxml = loader2.load();
+                EmployedProfileController controller2 = loader2.getController();
+                controller2.setParent(this);
                 areabody.getChildren().clear();
                 areabody.setCenter(fxml);
-                System.out.println("Chamado!!!");
+               
                 break;
              case "btnmenu1":
                 areabody.getChildren().clear();
                 areabody.setCenter(areabody1);
+                loadTable();
                 break;
             default:
                    break;

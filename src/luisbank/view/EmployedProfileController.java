@@ -12,6 +12,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import luisbank.Core.Controller.Agency;
 import luisbank.Core.Controller.Employed;
@@ -32,8 +33,11 @@ public class EmployedProfileController implements Initializable {
     @FXML private ComboBox<String> comboagency;
     @FXML private HBox btntransfere, btnchangedata, btnpass;
     @FXML private PasswordField pass1, pass;
+    @FXML private AnchorPane btnback;
     
     public Employed emp;
+    private GUIController parentController;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -48,20 +52,25 @@ public class EmployedProfileController implements Initializable {
         inputcontact1.setText(emp.getPhone());
         inputcontact2.setText(emp.getPhone2());
         
+        btnback.setOnMouseClicked(event -> { 
+            gotoBack();
+        });
         loadagencies();
         btntransfere.setOnMouseClicked(event -> {
             String agencycode = comboagency.getValue();
             Software.transfereEmployed(email.getText(), Software.getActualAgency(), Software.getAgency(agencycode));
             inputagency.setText(agencycode);
             labelsmsagency.setText("Funcionário "+emp.getName()+" transferido com sucesso!");
+            Software.saveAgencyState();
         } ); 
         
         btnchangedata.setOnMouseClicked(event -> {
             
             emp.setName(inputname.getText());
+            name.setText(emp.getName());
             emp.setPhone(inputcontact1.getText());
             emp.setPhone2(inputcontact2.getText());
-            
+            Software.saveAgencyState();
             labelsmssucess.setVisible(true);
         });
         
@@ -78,12 +87,21 @@ public class EmployedProfileController implements Initializable {
                     }
             emp.setPassword(pass.getText());
             labelsmspass.setText("Senha alterada com sucesso!");
+            Software.saveAgencyState();
         } );
     }    
     
     public void loadagencies(){
         for(Agency agency : Software.getAgencies().values()){
-            comboagency.getItems().add(agency.getCode());
+            if(!Software.getActualAgency().getCode().equals(agency.getCode()))
+                comboagency.getItems().add(agency.getCode());
         }
+    }
+    
+    public void setParent(GUIController parentController){
+        this.parentController = parentController;
+    }
+    public void gotoBack(){
+        this.parentController.openScene("listagency");
     }
 }

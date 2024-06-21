@@ -1,5 +1,6 @@
 package luisbank.Core.Controller;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 /*****
@@ -26,8 +27,9 @@ public class Software  {
     private static Employed logged_emplyed;
     
     public Software(){
-        admins.put(Configurations.defaultadmin.getEmail(), Configurations.defaultadmin);
         Software.loadState();
+        admins.put(Configurations.defaultadmin.getEmail(), Configurations.defaultadmin);
+        
         
       
     }
@@ -40,8 +42,8 @@ public class Software  {
     }
    
    public static boolean appendAgency(Agency agency){
-        if(!isAdmin())
-            return false;
+//        if(!isAdmin())
+//            return false;
         for (Agency agency2 : agencies.values()) {   
             if(agency2.getCode().equals(agency.getCode())){
                 return false;
@@ -123,7 +125,6 @@ public class Software  {
         return false;
     agency.appendEmployed(employed);
     saveAgencyState();
-   
     return true;
    }
 
@@ -155,14 +156,25 @@ public class Software  {
    }
 
    //selecciona um cliente, retornando par client-agencia
-   public static PairClientAgency getOneClientById(String clientcode){
+   public static PairClientAgency getOneClientById(String identification){
     for(Agency agency : agencies.values()){
         for(IClient client : agency.getClients().values()){
-            if(client.getCode().equals(clientcode))
+            if(client.getCode().equals(identification))
                 return new PairClientAgency(client, agency);
+            if(client.getAccount().getIban().equals(identification))
+                 return new PairClientAgency(client, agency);
         }
     }
     return null;
+   }
+   public static ArrayList<PairClientAgency> getClients(){
+       ArrayList<PairClientAgency> response = new ArrayList<>();
+       for(Agency agency : agencies.values()){
+           for(IClient client : agency.getClients().values()){
+               response.add(new PairClientAgency(client, agency));
+           }
+       }
+       return !response.isEmpty() ? response : null;
    }
 
    //selecciona um cliente, retornando par client-agencia
@@ -219,12 +231,23 @@ public class Software  {
         agencies.remove(code);
         saveAgencyState();
    }
+   public boolean appendActualAgencyClient(IClient client){
+       for(Agency agency : agencies.values()){
+           for(IClient client2 : agency.getClients().values()){
+               if(client2.getCode().equals(client.getCode()))
+                   return false;
+           }
+       }
+       actual_Agency.appendClient(client);
+       return true;
+   }
 
    //login de funcionários de agencias
    public static boolean login(String email, String pass){
         PairEmployedAgency pair;
         Employed employed2;
         pair = (checkEmailInSystem(email));
+       
         if(pair instanceof PairEmployedAgency){
             employed2 = pair.employed;
             if(employed2.getPassword().equals(pass)){
@@ -292,6 +315,39 @@ public class Software  {
         Date date = new Date((new Date()).getTime() + Configurations.milisseconds_time_transf_aubsent_client);
         actual_Agency.getSelectedClient().getAccount().transfere(valor, iban, date);
         return true;
+    }
+    
+    public static boolean isSelectedClientIbanOrCode(String iban){
+        
+            return getActualAgency().getSelectedClient().getCode().equals(iban) 
+                    || 
+                    getActualAgency().getSelectedClient().getAccount().getIban().equals(iban);
+        
+    }
+    public static boolean transfereMoney(String iban, double value){
+        //check clien to iban
+        System.out.println(iban + " vvvv "+value );
+        for(PairClientAgency entity : getClients()){
+
+            if(entity.client.getAccount().getIban().equals(iban)){
+                transfereMoneyToExistentClient(entity.client, value);
+                System.out.println("1 --------- "+entity.client.getAccount().getIban());
+                return true;
+                
+            }
+        }
+        
+        for(PairClientAgency entity : getClients()){
+            if(entity.client.getCode().equals(iban)){ // transfere pelo nif ou bi
+                transfereMoneyToExistentClient(entity.client, value);
+                System.out.println("2 '''''''''''''' "+entity.client.getAccount().getIban());
+                return true;
+                
+            }
+        }
+        transfereMoneyToAubsentClient(iban, value);
+        System.out.println("Nopppp");
+        return false;
     }
    
 }

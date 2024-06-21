@@ -11,9 +11,12 @@ public class Comertial implements Serializable{
     public String name;
     public String image;
 
-    public Comertial(String comertialcode, String name){
+    public Comertial(String comertialcode, String name, String phone1, String phone2){
         this.comertialcode = comertialcode;
         this.name = name;
+        this.phone = phone1;
+        this.optionalphone = phone2; 
     }
+    
 
 }

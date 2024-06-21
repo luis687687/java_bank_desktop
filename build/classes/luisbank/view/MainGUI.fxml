@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="main" fx:id="window" maxWidth="1.7976931348623157E308" prefHeight="709.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.GUIController">
+<BorderPane id="main" fx:id="window" maxWidth="1.7976931348623157E308" prefHeight="735.0" prefWidth="1245.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.GUIController">
    <center>
       <BorderPane fx:id="main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
@@ -59,7 +59,7 @@
                               <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="107.0" style="-fx-spacing: 10;" GridPane.columnIndex="1">
                                  <children>
                                     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #eee; -fx-background-radius: 100%;" />
-                                    <Label prefHeight="18.0" prefWidth="89.0" text="Luis Domingos Marques" />
+                                    <Label prefHeight="18.0" prefWidth="89.0" style="-fx-text-fill: textcolor;" text="Luis Domingos Marques" />
                                     <AnchorPane fx:id="btnlogout" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="20.0" style="-fx-shape: &quot;M902.5 517.4c9.399999999999977-9.599999999999966 9.399999999999977-25.299999999999955 0-34.89999999999998l-285.79999999999995-294.2c-9.400000000000091-9.600000000000023-24.5-9.600000000000023-33.90000000000009 0l-56.799999999999955 58.599999999999994c-9.399999999999977 9.599999999999994-9.399999999999977 25.299999999999983 0 34.900000000000006l135.29999999999995 139.2h-364.19999999999993c-13.200000000000045 0-24 11-24 24.69999999999999v98.59999999999997c0 13.700000000000045 10.799999999999955 24.700000000000045 24 24.700000000000045h374.1l-145.20000000000005 149.29999999999995c-9.399999999999977 9.600000000000023-9.399999999999977 25.300000000000068 0 34.90000000000009l56.799999999999955 58.5c9.400000000000091 9.599999999999909 24.5 9.599999999999909 33.90000000000009 0l285.79999999999995-294.30000000000007z m-484.5-333.4h-206.5v632.1h206.5v121.39999999999998h-267.2c-33.60000000000001 0-60.70000000000002-27.100000000000023-60.70000000000002-60.799999999999955v-753.4000000000001c0-33.59999999999995 27.10000000000001-60.799999999999955 60.70000000000002-60.799999999999955h267.2v121.5z&quot;;" styleClass="btn-menu-icon" />
                                  </children>
                               </HBox>
@@ -257,22 +257,23 @@
                               <HBox prefHeight="100.0" prefWidth="200.0" styleClass="main-top-right" GridPane.columnIndex="1" />
                               <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: tr;" />
                               <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <top>
-                                    <GridPane styleClass="area-right" BorderPane.alignment="CENTER">
+                                 <center>
+                                    <GridPane style="-fx-padding: 0 30 0 30;" styleClass="area-right" BorderPane.alignment="CENTER">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints maxHeight="261.0" minHeight="0.0" prefHeight="196.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="440.0" minHeight="10.0" prefHeight="189.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="273.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="440.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="296.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
                                           <GridPane alignment="TOP_CENTER">
                                             <columnConstraints>
                                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="207.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="302.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="302.0" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -280,7 +281,7 @@
                                              <children>
                                                 <VBox prefHeight="200.0" prefWidth="100.0">
                                                    <children>
-                                                      <Label style="-fx-text-fill: labelcolor; -fx-font-size: 11;" text="DETALHES DE OPERAÇÕES" translateX="30.0" translateY="30.0">
+                                                      <Label style="-fx-text-fill: textcolor; -fx-font-size: 11; -fx-padding: 30 0 0 0;" text="DETALHES DE OPERAÇÕES">
                                                          <font>
                                                             <Font size="11.0" />
                                                          </font>
@@ -291,7 +292,7 @@
                                                    <children>
                                                       <AnchorPane>
                                                          <children>
-                                                            <AnchorPane layoutX="180.0" layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F6F8FB;">
+                                                            <AnchorPane layoutX="180.0" layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: colorbase2;">
                                                                <children>
                                                                   <Label alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="20.0" prefWidth="46.0" style="-fx-text-fill: #CCD2DC;" text="Anos">
                                                                      <font>
@@ -300,7 +301,7 @@
                                                                   </Label>
                                                                </children>
                                                             </AnchorPane>
-                                                            <AnchorPane layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F6F8FB;">
+                                                            <AnchorPane layoutY="108.0" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: colorbase2;">
                                                                <children>
                                                                   <Label layoutX="30.0" layoutY="10.0" prefHeight="20.0" prefWidth="46.0" style="-fx-text-fill: #CCD2DC;" text="semanas">
                                                                      <font>
@@ -331,11 +332,11 @@
                                                 </VBox>
                                                 <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
                                                    <children>
-                                                      <HBox alignment="TOP_RIGHT" prefHeight="48.0" prefWidth="306.0" style="-fx-padding: 30 30 0 0; -fx-spacing: 10;">
+                                                      <HBox alignment="TOP_RIGHT" prefHeight="48.0" prefWidth="306.0" style="-fx-padding: 30 0 0 0; -fx-spacing: 10;">
                                                          <children>
                                                             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="102.0" style="-fx-border-color: topbordercolor; -fx-border-width: 1;">
                                                                <children>
-                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: titlelabelcolor;" text="DEPÓSITO">
+                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: textcolor;" text="DEPÓSITO">
                                                                      <font>
                                                                         <Font size="11.0" />
                                                                      </font>
@@ -345,7 +346,7 @@
                                                             </AnchorPane>
                                                             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="134.0" style="-fx-border-color: topbordercolor; -fx-border-width: 1;">
                                                                <children>
-                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: titlelabelcolor; -fx-font-size: 11;" text="TRANSFERÊNCIA">
+                                                                  <Label layoutX="35.0" layoutY="11.0" style="-fx-text-fill: textcolor;" text="TRANSFERÊNCIA">
                                                                      <font>
                                                                         <Font size="11.0" />
                                                                      </font>
@@ -359,9 +360,222 @@
                                                 </VBox>
                                              </children>
                                           </GridPane>
+                                          <GridPane alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="773.0" GridPane.rowIndex="1">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="273.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="298.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="298.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <VBox prefHeight="175.0" prefWidth="276.0">
+                                                   <children>
+                                                      <VBox maxHeight="-Infinity" prefHeight="172.0" prefWidth="276.0" style="-fx-spacing: 20;">
+                                                         <children>
+                                                            <GridPane prefHeight="23.0" prefWidth="282.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: colorbaseline; -fx-padding: 10 0 10 0;">
+                                                              <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                              </columnConstraints>
+                                                              <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                              </rowConstraints>
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: textcolor; -fx-font-size: 11;" text="Gráfico">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: labelcolor; -fx-font-size: 8; -fx-background-color: colorbase2; -fx-padding: 2 30 2 30;" text="Tendenência" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </GridPane>
+                                                            <HBox prefHeight="48.0" prefWidth="271.0" styleClass="image-chart" />
+                                                            <GridPane layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="282.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: labelcolor; -fx-font-size: 8; -fx-background-color: colorbase2; -fx-padding: 2 30 2 30;" text="Tendenência" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="13.0" prefWidth="15.0" style="-fx-background-radius: 1; -fx-background-color: syscolor;" />
+                                                               </children>
+                                                            </GridPane>
+                                                            <GridPane layoutX="10.0" layoutY="121.0" prefHeight="23.0" prefWidth="282.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: labelcolor; -fx-font-size: 8; -fx-background-color: colorbase2; -fx-padding: 2 30 2 30;" text="Tendenência" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="13.0" prefWidth="15.0" style="-fx-background-radius: 1; -fx-background-color: #EA182E;" />
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <AnchorPane />
+                                                      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 20; -fx-padding: 0 20 0 20;">
+                                                         <children>
+                                                            <GridPane prefHeight="23.0" prefWidth="282.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: colorbaseline; -fx-padding: 10 0 10 0;">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: textcolor; -fx-font-size: 11;" text="ENTRADAS">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 8; -fx-background-color: syscolor; -fx-padding: 2 30 2 30;" text="HOJE" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </GridPane>
+                                                            <GridPane layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="282.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="208.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="75.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: labelcolor; -fx-font-size: 8; -fx-background-color: colorbase2; -fx-padding: 2 30 2 30;" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
+                                                                           <children>
+                                                                              <Label style="-fx-font-size: 25; -fx-text-fill: colorlabel2;" text="KZ" />
+                                                                              <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 25; -fx-text-fill: colorlabel2;" text="100000000" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <Label style="-fx-text-fill: colorlabel2;" text="Valores entrando" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="BOTTOM_CENTER" layoutX="261.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <AnchorPane />
+                                                      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 20; -fx-padding: 0 0 20 0;">
+                                                         <children>
+                                                            <GridPane prefHeight="23.0" prefWidth="282.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: colorbaseline; -fx-padding: 10 0 10 0;">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: textcolor; -fx-font-size: 11;" text="SAÍDAS">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 8; -fx-background-color: #EA182E; -fx-padding: 2 30 2 30;" text="HOJE" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </GridPane>
+                                                            <GridPane layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="282.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="208.0" />
+                                                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="75.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label layoutX="10.0" layoutY="14.0" style="-fx-text-fill: labelcolor; -fx-font-size: 8; -fx-background-color: colorbase2; -fx-padding: 2 30 2 30;" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
+                                                                           <children>
+                                                                              <Label style="-fx-font-size: 25; -fx-text-fill: colorlabel2;" text="KZ" />
+                                                                              <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 25; -fx-text-fill: colorlabel2;" text="100000000" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <Label style="-fx-text-fill: colorlabel2;" text="Valores levantados" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: colorbase; -fx-padding: 0 5 5 5;" GridPane.rowIndex="2">
+                                             <top>
+                                                <GridPane prefHeight="40.0" prefWidth="767.0" BorderPane.alignment="CENTER">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="559.0" minWidth="10.0" prefWidth="541.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="223.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label style="-fx-text-fill: colorlabel2; -fx-padding: 0 0 0 10;" text="Transações do momento" />
+                                                   </children>
+                                                </GridPane>
+                                             </top>
+                                             <center>
+                                                <BorderPane fx:id="hometable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: colormain;" BorderPane.alignment="CENTER">
+                                                   <center>
+                                                      <VBox fx:id="hometablebody" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                             </center>
+                                          </BorderPane>
                                        </children>
                                     </GridPane>
-                                 </top>
+                                 </center>
                               </BorderPane>
                            </children>
                         </GridPane>
@@ -389,9 +603,9 @@
                               <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M623.7 548.9c-3.6000000000000227-1-7.100000000000023-1.8999999999999773-10.600000000000023-2.699999999999932-30.300000000000068 18.899999999999977-66 29.899999999999977-104.30000000000001 29.899999999999977-38.80000000000001 0-75-11.200000000000045-105.5-30.700000000000045-79.80000000000001 17.600000000000023-140.3 91.20000000000005-142.2 170.5-1 41.80000000000007-1.900000000000034 83.5-1.900000000000034 125.30000000000007-0.0999999999999659 38.89999999999998-2.8999999999999773 40 17.100000000000023 45.299999999999955 0 0 255.7 59.700000000000045 465.09999999999997 0.6000000000000227 11.100000000000023-4.600000000000023 17.399999999999977-10.200000000000045 17.100000000000023-23.800000000000068-1-48.09999999999991 0.8999999999999773-96.39999999999998-1-144.5-3.1000000000000227-80.39999999999998-56.10000000000002-148.19999999999993-133.79999999999995-169.89999999999998z m-305.50000000000006-1.1000000000000227c15.900000000000034-11.799999999999955 34.10000000000002-19.399999999999977 52.60000000000002-28.299999999999955-34.10000000000002-33.69999999999999-56-79.69999999999999-58.30000000000001-130.89999999999998-1.1000000000000227 0-2.3000000000000114 0-3.5 0-38.19999999999999 0-76.30000000000001-0.9000000000000341-114.4 0.2999999999999545-45.5 1.5-84.39999999999999 13.800000000000011-116.1 37.80000000000001-14.700000000000003 11.699999999999989-76.5 70.40000000000003-78.5 226.2v76.70000000000005c63.9 20.5 129.3 34 195.9 42.5 21.900000000000006 2.7999999999999545 30.19999999999999-1.3999999999999773 29.599999999999994-25.899999999999977-2.3000000000000114-81.10000000000002 26-148.9000000000001 92.69999999999999-198.4000000000001z m679.8 14.800000000000068c-3.2000000000000455-64.60000000000002-35.5-113.20000000000005-90-146.5-63.5-38.900000000000034-134.29999999999995-25.900000000000034-203-26.900000000000034-2.5 51-24.299999999999955 96.80000000000001-58.299999999999955 130.40000000000003 31.799999999999955 13.299999999999955 59.69999999999993 30 82.79999999999995 54.19999999999993 47.299999999999955 49.60000000000002 66.20000000000005 109.20000000000005 62.10000000000002 176.70000000000005-1 16.899999999999977 3 24.399999999999977 22.199999999999932 23 57.30000000000007-4.399999999999977 112.80000000000007-15.600000000000023 166.60000000000002-36.10000000000002 13.5-5.100000000000023 20-12.199999999999932 19.600000000000023-27.799999999999955-1.3999999999999773-49 0.39999999999997726-98.10000000000002-2-147z m-488.1-31.800000000000068c80-1.1999999999999318 144.60000000000002-66.49999999999994 144.70000000000005-146.29999999999995 0-80.89999999999998-63.700000000000045-145.6-144.10000000000002-146-81.5-0.5-147.89999999999998 64.60000000000002-148.3 145.3-0.39999999999997726 79.80000000000001 68.19999999999999 148.09999999999997 147.7 146.99999999999994z m-253.09999999999997-150.79999999999995c3.099999999999966-0.30000000000001137 10.5-0.39999999999997726 17.5-1.8000000000000114 14.099999999999966-2.8999999999999773 27.399999999999977-6 38.5-12.199999999999989 4.300000000000011-61.80000000000001 37.099999999999966-115.69999999999999 85.30000000000001-148.6-0.30000000000001137-3.700000000000017-0.9000000000000341-7.5-1.6000000000000227-11.400000000000006-14.5-73.4-86-127.2-156.8-118.6-78.69999999999999 9.599999999999994-137.5 75.5-133.7 149.6 4.200000000000003 80.69999999999999 67.19999999999999 142 150.8 143z m448.2-7.899999999999977c2.2000000000000455 0.7999999999999545 4.5 1.599999999999966 7 2.2999999999999545 92.79999999999995 25.600000000000023 185.20000000000005-45.19999999999999 184.39999999999998-141.99999999999997-0.6000000000000227-76.6-56.5-136.8-134.79999999999995-145.2-69-7.40000000000002-138.30000000000007 44.49999999999997-154.20000000000005 115.19999999999999-0.6000000000000227 2.299999999999983-1 4.5-1.1999999999999318 6.699999999999989 57.09999999999991 32.599999999999994 96.19999999999993 93.1 98.79999999999995 163.00000000000003z&quot;;" styleClass="btn-menu-icon" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="btnmenu3" layoutX="10.0" layoutY="380.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
+                        <AnchorPane id="seeclients" layoutX="10.0" layoutY="380.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
                            <children>
-                              <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot; &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot;;" styleClass="btn-menu-icon" />
+                              <AnchorPane fx:id="btnseeclients" layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot; &quot;M929.4 824h-858.8c-4.500000000000028 0-8.000000000000021 3.6000000000000227-8.000000000000021 8v58.10000000000002c0 4.5 3.6000000000000014 8 7.999999999999993 8h858.9c4.5 0 8-3.6000000000000227 8-8v-58.200000000000045c0-4.2999999999999545-3.6000000000000227-7.899999999999977-8.100000000000023-7.899999999999977z m-47-546.9c4.5 0 6.600000000000023-0.8000000000000114 5-1.8000000000000114-1.2999999999999545-0.8000000000000114-2.199999999999932-1.3000000000000114-3.1000000000000227-1.6999999999999886-124.19999999999993-56.00000000000003-248.5999999999999-111.80000000000001-372.59999999999997-168.20000000000002-10.699999999999989-4.800000000000011-18.899999999999977-4.400000000000006-29.30000000000001 0.3999999999999915-94.79999999999995 43.8-190 87.10000000000001-285 130.5-26.099999999999966 11.899999999999977-52.099999999999966 23.899999999999977-78.29999999999998 35.89999999999998-4 1.8000000000000114-7.199999999999989 3.6999999999999886-7.099999999999994 4.100000000000023 0.09999999999999432 0.39999999999997726 3.799999999999997 0.8000000000000114 8.200000000000003 0.8000000000000114h762.1999999999999z m-382.29999999999995-124.40000000000003c21-0.09999999999999432 38.19999999999993 17.100000000000023 38.10000000000002 38-0.20000000000004547 20.5-17.100000000000023 37.400000000000006-37.400000000000034 37.80000000000001-20.5 0.30000000000001137-38.30000000000001-17.099999999999994-38.69999999999999-37.69999999999999-0.30000000000001137-20.700000000000017 16.899999999999977-38 38-38.10000000000002z m-226 565.7c4.5-1.1368683772161603e-13 8-3.6000000000001364 8-8.000000000000114v-317.79999999999995c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v317.79999999999995c0 4.5 3.5999999999999943 8 8 8h91.60000000000002z m182.2 0.2999999999999545c4.5 0 8-3.6000000000000227 8-8v-318.1c0-4.5-3.6000000000000227-8-8-8h-91.60000000000002c-4.5 0-8 3.599999999999966-8 8v318.1c0 4.5 3.6000000000000227 8 8 8h91.60000000000002z m364.2-0.40000000000009095c4.5 0 8-3.599999999999909 8-8v-317.99999999999994c0-4.5-3.6000000000000227-8-8-8h-91.39999999999998c-4.5 0-8 3.599999999999966-8 8v317.99999999999994c0 4.5 3.6000000000000227 8 8 8h91.39999999999998z m-182.29999999999995 0c4.5 0 8-3.599999999999909 8-8v-317.9c0-4.5-3.6000000000000227-8-8-8h-91.5c-4.5 0-8 3.6000000000000227-8 8v317.9c0 4.5 3.599999999999909 8 8 8h91.5z m-521.9000000000001-364.09999999999997h768.3000000000001c4.5 0 8-3.599999999999966 8-8v-23.099999999999966c0-4.5-3.6000000000000227-8-8-8h-768.3000000000001c-4.499999999999957 0-7.999999999999957 3.599999999999966-7.999999999999957 8v23.099999999999966c-0.09999999999999432 4.5 3.5 8 8 8z m-7.999999999999957 402.3v23.200000000000045c0 4.5 3.6000000000000085 8 8 8h768.7c4.5 0 8-3.6000000000000227 8-8v-26.700000000000045c0-2.5-3.6000000000000227-4.5-8-4.5h-768.7c-4.399999999999949 0-7.999999999999957 3.6000000000000227-7.999999999999957 8z&quot;;" styleClass="btn-menu-icon" />
                            </children>
                         </AnchorPane>
                         <AnchorPane id="btnmenu4" layoutX="10.0" layoutY="411.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
@@ -399,7 +613,7 @@
                               <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot; &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot;;" styleClass="btn-menu-icon" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="btnmenu5" layoutX="10.0" layoutY="346.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
+                        <AnchorPane id="listagency" layoutX="10.0" layoutY="346.0" prefHeight="47.0" prefWidth="115.0" styleClass="btn-menu">
                            <children>
                               <AnchorPane layoutX="48.0" layoutY="18.0" prefHeight="12.0" prefWidth="20.0" style="-fx-shape: &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot; &quot;M885.6 246.2h-327.70000000000005l-16.299999999999955-34.599999999999994c-13.399999999999977-28.400000000000006-40.10000000000002-46.29999999999998-69.10000000000002-46.29999999999998h-358c-28.700000000000003 0-52 25.69999999999999-52 57.29999999999998v555c0 31.600000000000023 23.299999999999997 57.299999999999955 52 57.299999999999955h771c28.700000000000045 0 52-25.699999999999932 52-57.299999999999955v-474.1c0.10000000000002274-31.600000000000023-23.200000000000045-57.30000000000001-51.89999999999998-57.30000000000001z&quot;;" styleClass="btn-menu-icon" />
                            </children>

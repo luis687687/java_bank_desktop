@@ -182,7 +182,7 @@ public class Main {
                                                             System.out.println("Informe o nome ");
 
                                                             String name = sc.nextLine();
-                                                            BI bi = new BI();
+                                                            BI bi = new BI(name, name, name, name);
                                                             bi.setNumber(codeclient);
                                                             bi.fullname = name;
                                                             IClient client;
@@ -199,7 +199,7 @@ public class Main {
                                                             if(clitype.equals("s")){
                                                                 client = new PersonSingular(account, bi, "", "");
                                                             }else{
-                                                                client = new PersonColective(account, new Comertial(codeclient, name));
+                                                                client = new PersonColective(account, new Comertial(codeclient, name, "" , ""));
                                                             }
                                                                     
                                                             Software.actualAgencyAppendClient(client);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="area" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" style="-fx-padding: 0 0 0 15; -fx-spacing: 10; -fx-border-color: basecolor; -fx-border-width: 0 0 1 0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.UserRowController">
+   <children>
+      <VBox prefHeight="63.0" prefWidth="40.0" style="-fx-padding: 10 0 0 0;">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 10 0 0 0;" styleClass="avatar" />
+         </children>
+      </VBox>
+      <VBox fx:id="textarea" prefHeight="63.0" prefWidth="411.0" style="-fx-padding: 5 0 0 0;" styleClass="textarea">
+         <children>
+            <Label fx:id="nome" prefHeight="21.0" prefWidth="163.0" style="-fx-font-size: 15; -fx-text-fill: colortext;" styleClass="nome" text="Luis Domingos Marques" />
+            <Label fx:id="iban" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 12;" styleClass="iban" text="Iban: 03940950595005050" />
+            <Label fx:id="code" layoutX="10.0" layoutY="41.0" style="-fx-font-size: 10;" styleClass="code" text="BI: 0303030303" />
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@main.css" />
+      <URL value="@light.css" />
+   </stylesheets>
+</HBox>

@@ -41,7 +41,7 @@ public class LoginGUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        new Software();
+      
         
         btntheme.setOnMouseClicked( event -> {
             Manipulations.isLight = !Manipulations.isLight;
@@ -69,10 +69,12 @@ public class LoginGUIController implements Initializable {
                 loginsms.setText("Bem sucedido!");
                 loginsms.setStyle("-fx-text-fill: syscolor");
                 BorderPane main = ((BorderPane)LuisBank.mainElement);
+                
                 (new Manipulations()).changeTheme(main);
                 main.getChildren().clear();
                 main.setCenter(LuisBank.centerElment);
                 main.setLeft(LuisBank.sideBar);
+                LuisBank.mainController.loadTable();
                 
                 
             }else{

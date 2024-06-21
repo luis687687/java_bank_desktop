@@ -210,6 +210,7 @@ public class Account implements Serializable {
     }
 
     public ArrayList<Moviment> getMoviments(){
+        demandMaintance();
         return this.moviments;
     }
 

@@ -126,6 +126,9 @@
     -fx-text-fill:  labelcolor;
     
 }
+.scroll-pane{
+    -fx-background-color: transparent;
+}
 .scroll-pane > .viewport{
     -fx-background-color: transparent;
 }
@@ -182,4 +185,10 @@
 }
 .btn-transparent:hover .btn-text{
     -fx-text-fill: white;
+ }
+ .image-chart{
+     -fx-background-image: url("../assets/icons/chart.png");
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: contain;
+          
  }

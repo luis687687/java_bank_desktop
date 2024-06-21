@@ -28,5 +28,11 @@ public class Manipulations {
         }
         return isLight;
     }
-
+     
+     public static String formatValue(String value){
+         String v = value;
+         int posdot = v.indexOf(".");
+         v = v.substring(0, posdot+2);
+         return v;
+     }
 }

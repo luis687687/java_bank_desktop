@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="740.0" style="-fx-padding: 0 15 0 15; -fx-border-width: 0 0 2 0; -fx-border-color: colorbase; -fx-background-color: -----------------------------;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="221.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="197.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="197.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="172.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="150.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label styleClass="tbdescri" text="Descrição da operação" />
+      <Label layoutX="25.0" layoutY="23.0" styleClass="tbtermin" text="Término" GridPane.columnIndex="2" />
+      <Label layoutX="238.0" layoutY="23.0" styleClass="tbconta" text="Conta" GridPane.columnIndex="3" />
+      <Label layoutX="427.0" layoutY="23.0" styleClass="tbvalor" text="Montante" GridPane.columnIndex="4" />
+      <Label layoutX="413.0" layoutY="23.0" styleClass="tbinicio" text="Início" GridPane.columnIndex="1" />
+   </children>
+   <stylesheets>
+      <URL value="@main.css" />
+      <URL value="@light.css" />
+   </stylesheets>
+</GridPane>

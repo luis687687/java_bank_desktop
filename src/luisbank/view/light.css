@@ -1,5 +1,5 @@
 *{
-    colorbase: #f6f8fb;
+    colorbase: #f6f5fb;
     colormain: #fff;
    
     iconsize: 20px;
@@ -13,6 +13,8 @@
      coloriconarea: #F6F8FB;
      labelcolor:  #8A8A8A;
      titlelabelcolor: #656565;
+     colorbase2:  #F6F8FB;
+     colorlabel2: #9BA2AF;
     
     
 }

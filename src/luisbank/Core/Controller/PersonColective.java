@@ -3,10 +3,12 @@ public class PersonColective extends Person implements IClient {
     
     Comertial comertial;
     Account account;
+    String phone1, phone2;
     public PersonColective(Account account, Comertial comertial){
         super(comertial.phone, comertial.optionalphone);
         this.comertial = comertial;
         this.account =account;
+
     }
 
     public String getName(){
@@ -21,6 +23,7 @@ public class PersonColective extends Person implements IClient {
     public String toString(){
         return "colective: "+getName()+" code: "+getCode()+" Money: "+getAccount().getMoney()+" iban: "+getAccount().getIban()+" actual credit: "+getAccount().getCredite();
     }
+    
 
     
 }

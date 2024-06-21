@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="LuisBank.jnlp">
+  <information>
+    <title>LuisBank</title>
+    <vendor>CyberPunk</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="LuisBank.jar" size="2362893" download="eager" />
+    <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="luisbank.LuisBank"  name="LuisBank" />
+  <update check="always"/>
+</jnlp>
