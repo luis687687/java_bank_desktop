@@ -86,7 +86,10 @@ public class Account implements Serializable {
         return this.totalcreditemoney > 0 || this.money < 0;
     }
 
-    
+    public String getTimeToPermit(){ return "Autorizado!"; }
+    /****
+     * Essa função retorna o valor do tempo passado em segundos
+     ***/
     protected long seconds(Date datestart){
         Date actualdate = new Date();
         long spendedtime = actualdate.getTime() - datestart.getTime();

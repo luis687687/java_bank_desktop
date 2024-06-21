@@ -5,7 +5,11 @@
 package luisbank.view;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
@@ -17,7 +21,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
 import luisbank.Core.Controller.Moviment;
 import luisbank.Core.Controller.PairClientAgency;
 import luisbank.Core.Controller.PersonSingular;
@@ -28,15 +34,24 @@ import luisbank.Core.Controller.PersonSingular;
 public class ClientProfileController implements Initializable{
     
     @FXML private VBox columnclients, textarea, tablebody;
-    @FXML private TextField inputvalor, inputdestino, inputname, inputbi, inputiban, inputcontact1, inputcontact2, inputagency;
-    @FXML private Label name, saldo, iban;
+    @FXML private TextField inputvalor, inputdestino, inputname, inputbi, inputiban, inputsearch, inputcontact1, inputcontact2, inputagency;
+    @FXML private Label name, saldo, iban, btnchoice, timecont;
     @FXML private HBox btndeposita, btnlevanta, btncredito, btntransfere;
+    @FXML private AnchorPane btnsearch;
     
     public PairClientAgency selected_client;
+    public boolean choosedActualAgency = false;
     
+    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+        if(Software.getActualAgency().getSelectedClient() != null)
+            timecont.setText(Software.getActualAgency().getSelectedClient().getAccount().getTimeToPermit());
+            showClient();
+        
+    }));
+            
     public void initialize(URL url, ResourceBundle rb){
         
-        showAllClients();
+        showAllClients("");
         
         btndeposita.setOnMouseClicked(event -> { 
             if(Software.getActualAgency().getSelectedClient() == null){
@@ -46,7 +61,7 @@ public class ClientProfileController implements Initializable{
             
             double valor = Double.parseDouble(inputvalor.getText());
             Software.getActualAgency().getSelectedClient().getAccount().depositMoney(valor);
-            showClient();
+           
             
             
         });
@@ -57,7 +72,7 @@ public class ClientProfileController implements Initializable{
             }
             double valor = Double.parseDouble(inputvalor.getText());
             Software.getActualAgency().getSelectedClient().getAccount().removeMoney(valor);
-            showClient();
+           
         });
         btntransfere.setOnMouseClicked(event -> {
             System.out.println("Clicccc");
@@ -69,38 +84,61 @@ public class ClientProfileController implements Initializable{
                 return;
                     
             Software.transfereMoney(inputdestino.getText(), Double.parseDouble(inputvalor.getText())); //use internamente actual_agency e o selectedClient
-            showClient();
+            
                 
            
             
         });
-    }
-    public void showAllClients(){
-        
-        try{
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+        inputsearch.setOnKeyReleased(   event -> { 
+            System.out.println("IIIIIIIIIIIIIIIIIIIII   "+event);
             
-            for(Agency agency : Software.getAgencies().values()){
+            String searchtext = inputsearch.getText();
+           
+            showAllClients(searchtext);
+        });
+        
+        btnchoice.setOnMouseClicked(event -> {
+            choosedActualAgency = !choosedActualAgency;
+            if(choosedActualAgency){
+                btnchoice.getStyleClass().add("btn-choosed");
+            }else{
+                btnchoice.getStyleClass().remove("btn-choosed");
+            }
+            showAllClients(inputsearch.getText());
+            
+        });
+        
+        
+        
+    }
+    public void showAllClients(String searchtext){
+         String agencysearch = choosedActualAgency ? Software.getLoggedEmployedAgency().getCode() : "";
+        ArrayList<PairClientAgency> pairs = Software.searchClients(searchtext, agencysearch);
+        try{
+             columnclients.getChildren().clear();
+            for(PairClientAgency pair : pairs){
+                Agency agency = pair.agency;
+                IClient client = pair.client;
+                FXMLLoader load = new FXMLLoader(getClass().getResource("UserRow.fxml"));
+                Parent element = load.load();
+                UserRowController controller = load.getController();
+                controller.setName(client.getName());
+                controller.setIban(client.getAccount().getIban());
+                controller.getArea().setOnMouseClicked(event -> {
+                    setOneClient(new PairClientAgency(client, agency));
+                    
+                });
 
-                for(IClient client : agency.getClients().values()){
-                    FXMLLoader load = new FXMLLoader(getClass().getResource("UserRow.fxml"));
-                    Parent element = load.load();
-                    UserRowController controller = load.getController();
-                    
-                    controller.setName(client.getName());
-                    controller.setIban(client.getAccount().getIban());
-                    controller.getArea().setOnMouseClicked(event -> {
-                        selected_client = new PairClientAgency(client, agency);
-                        setOneClient(selected_client);
-                    });
-                    
-                    String clienttype = "Empresa: ";
-                    if(client instanceof PersonSingular)
-                        clienttype = "Pessoa singular: ";
-                    controller.setCode(clienttype+client.getCode());
-                    
-                    columnclients.getChildren().add(element);
-                    
-                }
+                String clienttype = "Empresa: ";
+                if(client instanceof PersonSingular)
+                    clienttype = "Pessoa singular: ";
+                controller.setCode(clienttype+client.getCode());
+
+                columnclients.getChildren().add(element);
+
+                
             }
             
         }
@@ -117,6 +155,7 @@ public class ClientProfileController implements Initializable{
         Software.setActualAgency(agency.getCode());
         Software.getActualAgency().setSelectedClient(client.getCode());
         showClient();
+        
         
     }
     

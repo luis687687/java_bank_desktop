@@ -98,7 +98,7 @@ public class GUIController implements Initializable {
                     System.out.println(mov);
                     GridPane el = (GridPane)element1;
                    if(cont == 5)
-                       break;
+                       return;
                     for(Node child : el.getChildren()){
                          Label text = (Label)child;
                          

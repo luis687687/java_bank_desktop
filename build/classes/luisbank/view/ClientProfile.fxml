@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="1000.0" prefWidth="1165.0" style="-fx-background-color: colorbase;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.ClientProfileController">
+<BorderPane prefHeight="1000.0" prefWidth="1618.0" style="-fx-background-color: colorbase;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.ClientProfileController">
    <stylesheets>
       <URL value="@main.css" />
       <URL value="@light.css" />
@@ -21,11 +21,11 @@
    <center>
       <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <GridPane prefHeight="1000.0" prefWidth="1162.0" style="-fx-background-color: colorbase;">
+            <GridPane prefHeight="1000.0" prefWidth="1472.0" style="-fx-background-color: colorbase;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="61.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="1101.0" minWidth="10.0" prefWidth="1101.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="0.0" prefWidth="34.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="34.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -41,20 +41,23 @@
                         </HBox>
                         <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="463.0" prefWidth="790.0" style="-fx-spacing: 20; -fx-padding: 30 0 0 0;">
                            <children>
-                              <VBox prefHeight="437.0" prefWidth="276.0" style="-fx-spacing: 20;">
+                              <VBox prefHeight="437.0" prefWidth="309.0" style="-fx-spacing: 20;">
                                  <children>
-                                    <AnchorPane maxHeight="1.7976931348623157E308" prefHeight="433.0" prefWidth="256.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
+                                    <AnchorPane maxHeight="1.7976931348623157E308" prefHeight="437.0" prefWidth="290.0" style="-fx-background-color: colormain; -fx-padding: 20 0 0 0;">
                                        <children>
                                           <Label layoutX="14.0" layoutY="14.0" styleClass="rotulo" text="CLIENTES DO BANCO" />
-                                          <HBox alignment="CENTER" layoutX="8.0" layoutY="40.0" maxHeight="-Infinity" style="-fx-spacing: 10;">
+                                          <HBox alignment="CENTER" layoutX="8.0" layoutY="40.0" maxHeight="-Infinity" prefHeight="31.0" prefWidth="248.0" style="-fx-spacing: 10;">
                                              <children>
-                                                <TextField prefHeight="31.0" prefWidth="215.0" promptText="Pesquisar cliente" styleClass="input" />
-                                                <AnchorPane prefHeight="31.0" prefWidth="36.0" styleClass="icon" />
+                                                <TextField fx:id="inputsearch" prefHeight="31.0" prefWidth="136.0" promptText="Pesquisar cliente" styleClass="input" />
+                                                <AnchorPane fx:id="btnsearch" maxWidth="103.0" prefHeight="31.0" prefWidth="103.0">
+                                                   <children>
+                                                      <Label fx:id="btnchoice" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="18.0" prefWidth="93.0" text="Nesta agência" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children></AnchorPane>
                                              </children>
                                           </HBox>
-                                          <ScrollPane hbarPolicy="NEVER" layoutX="-2.0" layoutY="86.0" prefHeight="331.0" prefWidth="275.0">
+                                          <ScrollPane hbarPolicy="NEVER" layoutX="-2.0" layoutY="116.0" prefHeight="301.0" prefWidth="275.0">
                                              <content>
-                                                <VBox fx:id="columnclients" prefHeight="200.0" prefWidth="251.0" style="-fx-spacing: 30;" />
+                                                <VBox fx:id="columnclients" prefHeight="281.0" prefWidth="251.0" style="-fx-spacing: 30;" />
                                              </content>
                                           </ScrollPane>
                                        </children>
@@ -65,16 +68,16 @@
                                  <children>
                                     <Label layoutX="24.0" layoutY="111.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Nome" />
                                     <TextField fx:id="inputname" layoutX="24.0" layoutY="127.0" prefHeight="31.0" prefWidth="149.0" promptText="Nome completo" style="-fx-background-color: colorbase;" styleClass="input" />
-                                    <Label layoutX="224.0" layoutY="113.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Agência" />
-                                    <TextField fx:id="inputagency" layoutX="206.0" layoutY="129.0" prefHeight="31.0" prefWidth="149.0" promptText="Agencia" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
+                                    <Label layoutX="208.0" layoutY="118.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Agência" />
+                                    <TextField fx:id="inputagency" layoutX="190.0" layoutY="134.0" prefHeight="31.0" prefWidth="149.0" promptText="Agencia" style="-fx-background-color: colorbase; -fx-border-width: 0;" styleClass="input" />
                                     <Label layoutX="25.0" layoutY="231.0" styleClass="rotulo" text="INFORMAÇÕES DE CONTACTO" />
                                     <Label layoutX="29.0" layoutY="261.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 1" />
                                     <TextField fx:id="inputcontact1" layoutX="29.0" layoutY="277.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto principal" style="-fx-background-color: colorbase;" styleClass="input" />
-                                    <Label layoutX="208.0" layoutY="251.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 2" />
-                                    <TextField fx:id="inputcontact2" layoutX="208.0" layoutY="267.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase;" styleClass="input" />
+                                    <Label layoutX="192.0" layoutY="256.0" style="-fx-text-fill: textcolor;" styleClass="rotulo" text="Contacto 2" />
+                                    <TextField fx:id="inputcontact2" layoutX="192.0" layoutY="272.0" prefHeight="31.0" prefWidth="149.0" promptText="Contacto opcional" style="-fx-background-color: colorbase;" styleClass="input" />
                                     <AnchorPane fx:id="img" layoutX="78.0" layoutY="23.0" maxHeight="43.0" maxWidth="49.0" prefHeight="43.0" prefWidth="49.0" styleClass="avatar" />
                                     <Label fx:id="name" layoutX="24.0" layoutY="73.0" prefHeight="27.0" prefWidth="220.0" style="-fx-font-size: 18; -fx-text-fill: textcolor;" styleClass="rotulo" text="Nome do cliente" />
-                                    <HBox fx:id="btnchangedata" alignment="CENTER" layoutX="224.0" layoutY="380.0" prefHeight="33.0" prefWidth="132.0" styleClass="btn-transparent">
+                                    <HBox fx:id="btnchangedata" alignment="CENTER" layoutX="208.0" layoutY="385.0" prefHeight="33.0" prefWidth="132.0" styleClass="btn-transparent">
                                        <children>
                                           <Label fx:id="btnimage111" styleClass="btn-text" text="Salvar">
                                              <font>
@@ -163,6 +166,16 @@
                               </AnchorPane>
                            </children>
                         </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 100 0 0 20;" GridPane.columnIndex="2">
+                     <children>
+                        <AnchorPane prefHeight="589.0" prefWidth="321.0" style="-fx-background-color: colormain;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="14.0" layoutY="30.0" prefHeight="90.0" prefWidth="281.0" style="-fx-font-size: 20; -fx-padding: 10; -fx-background-color: colorbase; -fx-text-fill: colortext;" text="Levantamentos serão permitos dentro de" wrapText="true" />
+                              <Label fx:id="timecont" alignment="CENTER" layoutX="14.0" layoutY="150.0" prefHeight="90.0" prefWidth="281.0" style="-fx-font-size: 20; -fx-padding: 10; -fx-background-color: colorbase; -fx-text-fill: colortext;" text="00h : 00min : 00s" wrapText="true" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>

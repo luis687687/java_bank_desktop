@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import luisbank.Core.Controller.Software;
@@ -43,6 +44,8 @@ public class LuisBank extends Application {
       mainStage = stage;
       mainStage.setScene(mainScene);
       mainStage.initStyle(StageStyle.TRANSPARENT);
+      mainStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() - 100);
+      mainStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight()-100);
       mainStage.show();
        
        

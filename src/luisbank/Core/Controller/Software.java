@@ -1,6 +1,7 @@
 package luisbank.Core.Controller;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 /*****
@@ -68,6 +69,31 @@ public class Software  {
             if(agency.getCode().equals(code))
                 return agency;
         return null;
+   }
+   
+   public static ArrayList<PairClientAgency> searchClients(String search, String agencysearch){
+       ArrayList<PairClientAgency> response = new ArrayList<>();
+       boolean stop = false;
+       Collection<Agency> agencies1 = agencies.values(); 
+       if(!agencysearch.isEmpty()){
+           Agency agen = getAgency(agencysearch);
+           if(agen != null){
+               agencies1 = new ArrayList<Agency>();
+               agencies1.add(agen);
+           }
+           
+           
+       }
+       for(Agency agency : agencies1){
+           for(IClient client : agency.getClients().values()){
+               if(client.getAccount().getIban().contains(search) || client.getName().contains(search) || client.getCode().contains(search))
+               {
+                   response.add(new PairClientAgency(client, agency));
+               }
+           }
+           
+       }
+       return response.isEmpty() ? null : response;
    }
 
 
@@ -291,6 +317,10 @@ public class Software  {
         System.out.println("Faça login com admin Válido");
         return false;
     }
+    
+    public static Agency getLoggedEmployedAgency(){
+        return checkEmailInSystem(logged_emplyed.getEmail()).agency;
+    }
 
     public PairClientAgency getClientByIban(String iban){
         for(Agency agency : agencies.values()){
@@ -326,12 +356,12 @@ public class Software  {
     }
     public static boolean transfereMoney(String iban, double value){
         //check clien to iban
-        System.out.println(iban + " vvvv "+value );
+        
         for(PairClientAgency entity : getClients()){
 
             if(entity.client.getAccount().getIban().equals(iban)){
                 transfereMoneyToExistentClient(entity.client, value);
-                System.out.println("1 --------- "+entity.client.getAccount().getIban());
+        
                 return true;
                 
             }
@@ -340,7 +370,7 @@ public class Software  {
         for(PairClientAgency entity : getClients()){
             if(entity.client.getCode().equals(iban)){ // transfere pelo nif ou bi
                 transfereMoneyToExistentClient(entity.client, value);
-                System.out.println("2 '''''''''''''' "+entity.client.getAccount().getIban());
+        
                 return true;
                 
             }

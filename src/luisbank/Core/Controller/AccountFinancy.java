@@ -51,6 +51,36 @@ public class AccountFinancy extends Account{
         System.out.println("Limite atingido !");
         return false;
     }
+    
+    public String getTimeToPermit(){
+        doesCanToRemoveMoney();
+        if(date_blocked_remove_operation == null){
+            System.out.println("Sem nenhuma data de bloqueio ..........");
+            return "0h:0min:0s";
+        }
+            
+        long time_blocked = date_blocked_remove_operation.getTime()+Configurations.milisseconds_time_pause_withdrow_account;
+        Date actualdate = new Date();
+        if(time_blocked > actualdate.getTime())
+            System.out.println("Boas....");
+        else{
+            System.out.println("Não.............");
+            return "Autorizado!";
+        }
+        float diference_seconds = (time_blocked - actualdate.getTime())/1000f;
+        System.out.println(diference_seconds+" dddddddd");
+        float hour = (diference_seconds/3600f);
+        System.out.println(hour+ " horassss ");
+        long hour_int = (int)hour;
+        float min = (hour-hour_int)*60;
+        System.out.println(min+ " minn ");
+        long min_int = (int)min;
+        int second = (int)((min - min_int)*60);
+        
+        System.out.println(hour_int+ "h : "+min_int+"min : "+second+"s ");
+        
+        return  hour_int+"h:"+min_int+"min:"+second+"s";
+    }
 
 
 

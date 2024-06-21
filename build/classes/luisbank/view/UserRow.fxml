@@ -10,7 +10,7 @@
    <children>
       <VBox prefHeight="63.0" prefWidth="40.0" style="-fx-padding: 10 0 0 0;">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 10 0 0 0;" styleClass="avatar" />
+            <AnchorPane minHeight="25.0" minWidth="20.0" prefHeight="25.0" prefWidth="20.0" style="-fx-padding: 10 0 0 0; -fx-max-width: 20; -fx-max-height: 20; -fx-pref-width: 20; -fx-pref-height: 20; -fx-min-width: 20; -fx-min-height: 20;" styleClass="avatar" />
          </children>
       </VBox>
       <VBox fx:id="textarea" prefHeight="63.0" prefWidth="411.0" style="-fx-padding: 5 0 0 0;" styleClass="textarea">
