@@ -47,7 +47,7 @@ public class CreateClientController implements Initializable {
     @FXML private AnchorPane img, imgarea;
     @FXML private BorderPane main;
     @FXML private ComboBox<String> comboaccounts, comboclients;
-    @FXML private Label title, labelclient, labelcode, labeldate, labellocal;
+    @FXML private Label title, labelclient, labelcode, labeldate, labellocal, sms;
     
     @FXML private TextField inputname1, inputcode1, inputlocal1, inputcontact1, inputcontact2;
     @FXML private DatePicker inputdate1;
@@ -83,8 +83,10 @@ public class CreateClientController implements Initializable {
         });
         
         btnsave1.setOnMouseClicked( event -> {
+            sms.setText("");
            String name = inputname1.getText();
             LocalDate date = inputdate1.getValue();
+            
            String local = inputlocal1.getText();
            String phone1 = inputcode1.getText();
            String phone2 = inputcontact2.getText();
@@ -93,14 +95,39 @@ public class CreateClientController implements Initializable {
            
            String clienttype = comboclients.getValue();
            
-           
-           if(clienttype == null) return;
-           if(date == null)
+           if(name.isEmpty()){
+               sms.setText("ERRO: defina o nome do cliente");
                return;
-           BI bi = new BI(name, code, local, date.toString());
+           }
 
-           if(accounttype == null )
+           if(local.isEmpty()){
+               sms.setText("ERRO: defina o local");
                return;
+           }           
+           if(clienttype == null){
+               sms.setText("ERRO: defina o tipo de cliente");
+               return;
+           }
+           if(date == null){
+               sms.setText("ERRO: defina uma data");
+               return;
+           }
+           if(2024 - date.getYear() < 18){
+                sms.setText("Erro: deve ter no mínimo 18 anos de idade");
+                return;
+            }
+               
+           BI bi = new BI(name, code, local, date.toString());
+           
+           if(!bi.valide()){
+               
+               sms.setText("ERRO: BI inválido");
+               return;
+           }
+           if(accounttype == null ){
+               sms.setText("ERRO: defina o tipo de conta");
+               return;
+           }
            
            Account account = new Account();
            if(accounttype.equals(accounts[0]))

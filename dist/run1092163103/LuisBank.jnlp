@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="LuisBank.jar" size="2408937" download="eager" />
+    <jar href="LuisBank.jar" size="2409498" download="eager" />
     <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="luisbank.LuisBank"  name="LuisBank" />

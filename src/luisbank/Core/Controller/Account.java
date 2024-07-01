@@ -29,7 +29,7 @@ public class Account implements Serializable {
     //auxiliares
     private long last_time_to_pay_credite; //ultima vez que pagou o credito
     private long last_time_to_pay_account; //ultima vez que pagou a manutenção
-    private long time_to_end_transference, time_start_transference ;
+    private long time_to_end_transference ;
     
     
 
@@ -96,7 +96,7 @@ public class Account implements Serializable {
         long actualtime = (new Date()).getTime();
         float diference_seconds = (time_to_end_transference - actualtime) / 1000f;
         if(actualtime >= time_to_end_transference)
-            return "";
+            return "Sem pendentes";
         
         float hour = (diference_seconds/3600f);
         long hour_int = (int)hour;

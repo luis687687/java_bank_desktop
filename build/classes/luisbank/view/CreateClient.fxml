@@ -98,6 +98,7 @@
                                     <AnchorPane fx:id="img" layoutX="-1.0" layoutY="8.0" prefHeight="200.0" prefWidth="200.0" styleClass="avatar" />
                                  </children>
                               </AnchorPane>
+                              <Label fx:id="sms" alignment="CENTER" layoutX="243.0" layoutY="37.0" prefHeight="78.0" prefWidth="191.0" style="-fx-background-color: #F3F3F3aa;" textFill="RED" wrapText="true" />
                            </children>
                         </AnchorPane>
                      </children>

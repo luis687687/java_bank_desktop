@@ -65,6 +65,7 @@ public class CreateEmployedController implements Initializable {
     }
     
     public void create(){
+        smserror.setText("");
         Agency agency = Software.getActualAgency();
         String email = inputemail.getText();
         String password = inputpass.getText();
@@ -73,6 +74,19 @@ public class CreateEmployedController implements Initializable {
         String name = inputname.getText();
         String local = inputlocal.getText();
         
+        
+        if(name.isEmpty()){
+            smserror.setText("Erro, insira o nome!");
+            return;
+        }
+        if(password.isEmpty()){
+            smserror.setText("Erro, insira uma pass!");
+            return;
+        }
+        if(password.length() < 8){
+            smserror.setText("Erro, a pass deve ter no mínimo 8 caracteres");
+            return;
+        }
         if(agency != null){
             
             Employed empl = new Employed(email, password, phone, optionalphone, name);

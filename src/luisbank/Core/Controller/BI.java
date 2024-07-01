@@ -32,6 +32,16 @@ public class BI implements Serializable{
         this.number = number;
     
     }
+    public boolean valide(){
+        String pattern = "\\d{9}[A-Z]{2}\\d{3}";
+        return validatePattern(this.number, pattern);
+    }
+    
+     public static boolean validatePattern(String input, String pattern) {
+        Pattern compiledPattern = Pattern.compile(pattern);
+        Matcher matcher = compiledPattern.matcher(input);
+        return matcher.matches();
+    }
     public String getNumber(){
         return this.number;
     }
