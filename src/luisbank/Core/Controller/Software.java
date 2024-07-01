@@ -35,7 +35,7 @@ public class Software  {
       
     }
 
-    public Employed getLoggedEmployed(){
+    public static Employed getLoggedEmployed(){
         return logged_emplyed;
     }
     public static Agency getActualAgency(){
@@ -170,8 +170,8 @@ public class Software  {
         return agencyAppendEmployed(actual_Agency, employed);
    }
    //retorna falso se o numero de identificação do cliente já existir
-   public static boolean actualAgencyAppendClient(IClient client){
-    return agencyAppendClient(actual_Agency, client);
+   public static boolean actualLoggedEmployedAgencyAppendClient(IClient client){
+    return agencyAppendClient(getLoggedEmployedAgency(), client);
    }
 
    public static HashMap<String, IClient> getClientsFromAgency(String agencycode){
@@ -277,12 +277,22 @@ public class Software  {
         if(pair instanceof PairEmployedAgency){
             employed2 = pair.employed;
             if(employed2.getPassword().equals(pass)){
-                actual_Agency = pair.agency;
+                actual_Agency = pair.agency == null ? getFirstAgency() : pair.agency;
                 logged_emplyed = employed2;
+                System.out.println("");
+                System.out.println("================");
+                System.out.println(actual_Agency + " HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH ");
+                System.out.println("================");
                 return true;
             }
         }
         return false;
+   }
+   private static Agency getFirstAgency(){
+       for(Agency age : agencies.values()){
+           return age;
+       }
+       return null;
    }
 
 
@@ -319,10 +329,12 @@ public class Software  {
     }
     
     public static Agency getLoggedEmployedAgency(){
+        if(isAdmin())
+            return getFirstAgency();
         return checkEmailInSystem(logged_emplyed.getEmail()).agency;
     }
 
-    public PairClientAgency getClientByIban(String iban){
+    public static PairClientAgency getClientByIban(String iban){
         for(Agency agency : agencies.values()){
             IClient client = agency.getClientByIban(iban);
             if( client instanceof IClient)
@@ -332,18 +344,20 @@ public class Software  {
     }
 
     public static boolean transfereMoneyToExistentClient(IClient client2, double valor){
+        
         if(client2 instanceof IClient){
+            Agency agency2 = getClientByIban(client2.getAccount().getIban()).agency;
             //data end será uma data normal, porque existe o cliente na nossa base de dados
             Date date = new Date((new Date()).getTime() + Configurations.milisseconds_time_transf_existent_client);
-            if(actual_Agency.getSelectedClient().getAccount().transfere(valor, client2.getAccount().getIban(), date))
-                client2.getAccount().receive(valor, actual_Agency.getSelectedClient().getAccount().getIban(), date); 
+            if(actual_Agency.transfereMoney(valor, client2.getAccount().getIban(), date))
+                agency2.receiveMoney(client2, valor, actual_Agency.getSelectedClient().getAccount().getIban(), date); 
         }
         return true;
     }
 
     public static boolean transfereMoneyToAubsentClient(String iban, double valor){
         Date date = new Date((new Date()).getTime() + Configurations.milisseconds_time_transf_aubsent_client);
-        actual_Agency.getSelectedClient().getAccount().transfere(valor, iban, date);
+        actual_Agency.transfereMoney(valor, iban, date);
         return true;
     }
     
@@ -379,5 +393,6 @@ public class Software  {
         System.out.println("Nopppp");
         return false;
     }
-   
+    
+
 }

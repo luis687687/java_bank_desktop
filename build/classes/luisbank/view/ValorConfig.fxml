@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<GridPane maxHeight="-Infinity" prefHeight="404.0" prefWidth="774.0" style="-fx-background-color: colormain; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <effect>
+      <DropShadow height="11.0" offsetY="4.0" radius="7.5" spread="0.18">
+         <color>
+            <Color red="0.2736533284187317" green="0.2295999974012375" blue="0.5600000023841858" opacity="0.10687022656202316" />
+         </color>
+      </DropShadow>
+   </effect>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 30 0 0 30;">
+         <children>
+            <Label style="-fx-font-size: 18; -fx-font-weight: 700;" text="Configurações de valores" />
+            <VBox prefHeight="422.0" prefWidth="357.0" style="-fx-padding: 10 30 0 10; -fx-spacing: 10;">
+               <children>
+                  <GridPane style="-fx-padding: 10 30 10 30; -fx-background-color: colormain; -fx-background-radius: 5;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: 600;" text="Valor máximo de crédito" />
+                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                     </children>
+                     <effect>
+                        <DropShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color opacity="0.049618322402238846" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </GridPane>
+                  <GridPane layoutX="20.0" layoutY="20.0" style="-fx-padding: 10 30 10 30; -fx-background-color: colormain; -fx-background-radius: 5;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: 600;" text="Valor a cobrar pela manutenção" />
+                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                     </children>
+                     <effect>
+                        <DropShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color opacity="0.049618322402238846" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </GridPane>
+                  <GridPane layoutX="20.0" layoutY="70.0" style="-fx-padding: 10 30 10 30; -fx-background-color: colormain; -fx-background-radius: 5;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: 600;" text="Valor de lucro de investimento de conta poupança" />
+                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                     </children>
+                     <effect>
+                        <DropShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color opacity="0.049618322402238846" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </GridPane>
+                  <GridPane layoutX="20.0" layoutY="138.0" style="-fx-padding: 10 30 10 30; -fx-background-color: colormain; -fx-background-radius: 5;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: 600;" text="Valor limite de levantamento em conta poupança" />
+                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                     </children>
+                     <effect>
+                        <DropShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color opacity="0.049618322402238846" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </GridPane>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="111.0" prefWidth="704.0" style="-fx-padding: 0 0 30 0;">
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="37.0" prefWidth="83.0" style="-fx-background-radius: 8;" styleClass="btn-default">
+                           <children>
+                              <Label styleClass="btn-text" text="Salvar" />
+                           </children>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.17100000381469727" green="0.3289499878883362" blue="0.8999999761581421" opacity="0.6641221642494202" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@main.css" />
+      <URL value="@light.css" />
+   </stylesheets>
+</GridPane>

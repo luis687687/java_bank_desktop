@@ -2,6 +2,7 @@ package luisbank.Core.Controller;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 
 /****
@@ -150,4 +151,24 @@ public class Agency implements Serializable{
         return null;
     }
     
+    public boolean setSelectedEmployedCheck(double value){
+        return this.selected_client.getAccount().setChek(value);
+    }
+    
+    public boolean transfereMoney(double value, String iban, Date dateend){
+        
+        return getSelectedClient().getAccount().transfere(value, iban, dateend);
+    }
+    public void receiveMoney(IClient client2, double value, String iban, Date date){
+        client2.getAccount().receive(value, iban, date);
+    }
+    
+    public boolean removeMoney(double money){
+        
+        return this.getSelectedClient().getAccount().removeMoney(money);
+    }
+    
+    public boolean depositMoney(double money){
+        return this.getSelectedClient().getAccount().depositMoney(money);
+    }
 }

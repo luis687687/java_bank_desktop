@@ -117,7 +117,7 @@ public class CreateClientController implements Initializable {
                 
            
             
-            Software.actualAgencyAppendClient(client);
+            Software.actualLoggedEmployedAgencyAppendClient(client);
             System.out.println(Software.getActualAgency().getClients());
             System.out.println("Poooooo");
             System.out.println(clienttype);

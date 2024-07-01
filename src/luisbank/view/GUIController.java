@@ -42,6 +42,7 @@ public class GUIController implements Initializable {
     @FXML private VBox menubuttoncontainer, hometablebody;
     @FXML private GridPane rightarea;
     @FXML private AnchorPane btnlogout;
+    @FXML private HBox btnsettings;
     
     
     
@@ -71,7 +72,19 @@ public class GUIController implements Initializable {
         btnlogout.setOnMouseClicked( event -> {
             logoutAndSave();
         });
-        
+        btnsettings.setOnMouseClicked(event -> { 
+            
+            try{
+                main.getChildren().remove(main.getCenter());
+                FXMLLoader fxml = new FXMLLoader(getClass().getResource("Settings.fxml"));
+                Parent elem = fxml.load();
+                main.setCenter(elem);
+                
+            }
+            catch(Exception ex){
+                System.out.println(ex+ "  ERRO AO ABRIR SETTINGS");
+            }
+        });
       
     }
     
@@ -82,9 +95,11 @@ public class GUIController implements Initializable {
         
             FXMLLoader fx = new FXMLLoader();
             Parent element = fx.load(getClass().getResource("RowHomeHistory.fxml"));
-            hometable.getChildren().clear(); 
+            hometable.getChildren().clear();
+            
             hometable.setTop(element);
             hometable.setCenter(hometablebody);
+            hometablebody.getChildren().clear();
             if(Software.getActualAgency() == null)
                     return;
             int cont  = 0;
@@ -93,11 +108,12 @@ public class GUIController implements Initializable {
                 
                 for(Moviment mov : client.getAccount().getMoviments()){
                     cont++;
+                   
                     FXMLLoader fx2 = new FXMLLoader();
                     Parent element1 = fx2.load(getClass().getResource("RowHomeHistory.fxml"));
                     System.out.println(mov);
                     GridPane el = (GridPane)element1;
-                   if(cont == 5)
+                   if(cont == 4)
                        return;
                     for(Node child : el.getChildren()){
                          Label text = (Label)child;
@@ -135,7 +151,7 @@ public class GUIController implements Initializable {
                     
                    
                 }
-
+                return;
                 
             }
         }
@@ -179,7 +195,7 @@ public class GUIController implements Initializable {
     }
     public void openScene(String id){
         Parent fxml;
-        
+        main.setCenter(rightarea);
         try{
            switch(id){
             case "btnmenu2":

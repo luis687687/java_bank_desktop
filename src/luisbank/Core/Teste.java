@@ -26,7 +26,7 @@ import luisbank.Core.Controller.PersonSingular;
 import luisbank.view.Manipulations;
 
 
-public class Main {
+public class Teste {
     
     public static void main(String ...args) throws Exception {
 
@@ -44,14 +44,8 @@ public class Main {
 //        long alter = tim + 1000;
 //        Date d2 = new Date();
 //        d2.setTime(alter);
-//        
-//
-//        System.out.println(tim);
-//        System.out.println(d.getTime());
-//        System.out.println(d);
-//        System.out.println(d2);
-//        
-//
+
+        System.out.print(Manipulations.formatMoney("300000"));
 //        
         
 //        while (true) {

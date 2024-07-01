@@ -21,18 +21,22 @@ public class Account implements Serializable {
     private Date datecredite_start;
     protected Date dateaccount_created;
     protected double money_demanded;
-    protected double total_money_removed;
-
+    protected double total_money_removed = 0;
+    protected boolean card = false;
+    private boolean active = true;
+    protected double total_mult = 0;
 
     //auxiliares
     private long last_time_to_pay_credite; //ultima vez que pagou o credito
     private long last_time_to_pay_account; //ultima vez que pagou a manutenção
+    private long time_to_end_transference, time_start_transference ;
+    
     
 
     public Account(){
         this.ibanGenerator();
         this.moviments = new ArrayList<>();
-        this.percent = Configurations.percent_normal_account;
+       
         this.dateaccount_created = new Date();
         this.money_demanded = Configurations.money_demand_corrent_account;
         
@@ -45,6 +49,19 @@ public class Account implements Serializable {
         demandMaintance();
         return this.money;
     }
+    public void setActive(boolean status){
+        this.active = status;
+    }
+    public boolean isActive(){
+        return this.active;
+    }
+    
+    public void setCard(boolean state){
+        this.card = state;
+    }
+    public boolean hasCard(){
+        return this.card;
+    }
 
 
     //cobrar manutenção
@@ -55,7 +72,8 @@ public class Account implements Serializable {
         System.out.println(cont+ " politicas");
 
         double debit = cont * this.money_demanded;
-
+        if(debit == 0)
+               return false;
         if(this.money > debit ){
             this.money -= debit;
             last_time_to_pay_account = seconds;
@@ -64,7 +82,30 @@ public class Account implements Serializable {
         
         return true;
     }
+    
+    public int timeToDemadMaintance(){
+         long seconds = seconds(dateaccount_created);
+         int cont = countMultiplesTime(seconds, last_time_to_pay_account, Configurations.second_time_to_apply_policy);
+         return cont;
+    }
+    
+ 
 
+    
+    public String getLeftTimeTransference(){
+        long actualtime = (new Date()).getTime();
+        float diference_seconds = (time_to_end_transference - actualtime) / 1000f;
+        if(actualtime >= time_to_end_transference)
+            return "";
+        
+        float hour = (diference_seconds/3600f);
+        long hour_int = (int)hour;
+        float min = (hour-hour_int)*60;
+        long min_int = (int)min;
+        int second = (int)((min - min_int)*60); 
+        return  hour_int+"h:"+min_int+"min:"+second+"s";
+        
+    }
     public boolean setCredite(double value){
         if(hasCredite())
             return false;
@@ -103,26 +144,69 @@ public class Account implements Serializable {
     }
 
     public double getCredite(){
+        double percent = this instanceof AccountFinancy ? Configurations.percent_credit_financy_account : Configurations.percent_credit_normal_account;
         if(this.datecredite_start instanceof Date)
         {
-            double totalpay = 0;
+            double totalpay = 0 , moneypercentvalue = percent*this.totalcreditemoney;
             long seconds = seconds(this.datecredite_start);
-            totalpay = countMultiplesTime(seconds, last_time_to_pay_credite, Configurations.second_time_waiting_to_pay_credite_account)*this.percent*this.totalcreditemoney;
-            payedcredit += totalpay;
-            if(totalpay != 0)
-                if(this.totalcreditemoney > payedcredit ){ //pode remover o crédito
+            int timespent = countMultiplesTime(seconds, last_time_to_pay_credite, 
+                    Configurations.second_time_waiting_to_pay_credite_account);
+            totalpay = timespent
+                    *moneypercentvalue;
+            System.out.println("");
+            System.out.println("Total credit "+this.totalcreditemoney);
+            System.out.println("Percent "+percent);
+            System.out.println("Money Percent value "+moneypercentvalue);
+            System.out.println(payedcredit+" Pago a pagar "+totalpay);
+            System.out.println("====================================== "+timespent);
+            double percent_mult = this instanceof AccountFinancy ? Configurations.percent_mult_financy : Configurations.percent_mult_credit;
+            if(this.money == 0 ){
+                this.total_mult += percent_mult * this.creditemoney;
+                return this.totalcreditemoney;
+            }
+            if(totalpay != 0){
+                
+                if(this.totalcreditemoney > payedcredit + totalpay ){ //pode remover o crédito
+
+                    if(this.money - totalpay < 0)
+                        totalpay = this.money;
+                    
+                    payedcredit += totalpay;
                     this.money -= totalpay;
-                    this.totalcreditemoney -= totalpay;
+                    
+                    
+                    if(this.totalcreditemoney - totalpay <= 0){
+                        this.totalcreditemoney = 0;
+                        this.datecredite_start = null;
+                    }
+                    else{
+                        this.totalcreditemoney -= totalpay;
+                    }
+                        
+                    
                     last_time_to_pay_credite = seconds;
-                    moviments.add(new Moviment(-totalpay, Configurations.mov_type_credite_pay, this.money));
+                    moviments.add(new Moviment(-totalpay, Configurations.mov_type_credite_pay+(timespent != 1 ? " meses " : " mes"), this.money));
                 }
                 else{
-                    this.money -= this.totalcreditemoney;
-                    this.payedcredit += this.totalcreditemoney;
-                    this.datecredite_start = null;
-                    this.totalcreditemoney = 0;
-                    moviments.add(new Moviment(-this.creditemoney, Configurations.mov_type_credite_pay, this.money));
+                    double valuetake = this.totalcreditemoney;
+                    if(this.money - valuetake < 0)
+                        valuetake = this.money;
+                        
+                    this.money -= valuetake;
+                    this.payedcredit += valuetake;
+                   
+                    
+                    if(this.totalcreditemoney - totalpay <= 0){
+                         this.datecredite_start = null;
+                         this.totalcreditemoney = 0;
+                    }else{
+                        this.totalcreditemoney -= valuetake;
+                    }
+                        
+                    
+                    moviments.add(new Moviment(-valuetake, Configurations.mov_type_credite_pay+timespent+(timespent != 1 ? " meses " : " mes"), this.money));
                 }
+            }
         }
         else{
             this.totalcreditemoney = 0;
@@ -158,13 +242,13 @@ public class Account implements Serializable {
     public boolean depositMoney(double money){
         double finalmoney = this.money + money;
         if(money > 0){
-            if(this.money < 0){
+//            if(this.money < 0){
                 
-                if(finalmoney >= 0) //descontou tudo que estava lá
-                    this.moviments.add(new Moviment(-this.money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
-                else //desconte tudo que entrou
-                    this.moviments.add(new Moviment(-money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
-            }
+//                if(finalmoney >= 0) //descontou tudo que estava lá
+//                this.moviments.add(new Moviment(-this.money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
+//                else //desconte tudo que entrou
+//                    this.moviments.add(new Moviment(-money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
+//            }
             this.money = finalmoney;
             this.moviments.add(new Moviment(money, Configurations.mov_type_deposit, finalmoney));
             
@@ -174,13 +258,13 @@ public class Account implements Serializable {
     }
 
     public boolean removeMoney(double money){
-        return this.internalRemoveMoney(money);
+        return this.internalRemoveMoney(money, Configurations.mov_type_remov);
     }
-    protected boolean internalRemoveMoney(double money){
+    protected boolean internalRemoveMoney(double money, String type){
         if(this.money - money >= 0){
             this.money -= money;
             this.total_money_removed += money;
-            this.moviments.add(new Moviment(-money, Configurations.mov_type_remov, this.money));
+            this.moviments.add(new Moviment(-money, type, this.money));
             return true;
         }
         return false;
@@ -191,6 +275,7 @@ public class Account implements Serializable {
     }
     
     public boolean transfere(double money, String destinationiban, Date dateend){
+       time_to_end_transference = dateend.getTime();
        return this.internalTransfere(money, destinationiban, dateend);
     }
     protected boolean internalTransfere(double money, String destinationiban, Date dateend){
@@ -215,6 +300,9 @@ public class Account implements Serializable {
     public ArrayList<Moviment> getMoviments(){
         demandMaintance();
         return this.moviments;
+    }
+    public boolean setChek(double value){
+        return this.internalRemoveMoney(value, Configurations.mov_type_chek);
     }
 
 }

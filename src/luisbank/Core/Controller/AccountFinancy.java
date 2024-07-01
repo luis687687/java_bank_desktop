@@ -13,9 +13,9 @@ public class AccountFinancy extends Account{
     
 
     public AccountFinancy(){
-        super();
-        this.percent = Configurations.percent_financy_account;
-        this.mov_type_saving_account = Configurations.money_received_financy_account;
+        super();        
+        
+        
     }
     public boolean setCredite(double value){
         return false; //nao pode setar credito
@@ -26,18 +26,24 @@ public class AccountFinancy extends Account{
         payFinancy();
         return this.money;
     }
+     public boolean hasCard(){
+        return false;
+    }
 
     public boolean removeMoney(double money){
-        
+        System.out.println("Aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         if(!hasPermitionToRemoveMoney(money))
             return false;
+        System.out.println(hasPermitionToRemoveMoney(money)+"  pppppppeeeeeeeeeeerrrrrrrrrrrrmmmmmmmmmi");
         if(this.total_money_removed + money == Configurations.financy_account_limite_remove_money) //se no final de tudo chegar ao limite de movimentação
             this.date_blocked_remove_operation = new Date(); //inicializa a data
-        return this.internalRemoveMoney(money);
+        return this.internalRemoveMoney(money, Configurations.mov_type_remov);
     }
      public boolean transfere(double money, String destinationiban, Date dateend){
         if(!hasPermitionToRemoveMoney(money))
             return false;
+        if(this.total_money_removed + money > Configurations.financy_account_limite_remove_money)
+            return false; //não pode transferir, mais que o limite
         if(this.total_money_removed + money == Configurations.financy_account_limite_remove_money) //se no final de tudo chegar ao limite de movimentação
             this.date_blocked_remove_operation = new Date(); //inicializa a data
        return this.internalTransfere(money, destinationiban, dateend);
@@ -56,7 +62,7 @@ public class AccountFinancy extends Account{
         doesCanToRemoveMoney();
         if(date_blocked_remove_operation == null){
             System.out.println("Sem nenhuma data de bloqueio ..........");
-            return "0h:0min:0s";
+            return "Permito!";
         }
             
         long time_blocked = date_blocked_remove_operation.getTime()+Configurations.milisseconds_time_pause_withdrow_account;
@@ -89,7 +95,7 @@ public class AccountFinancy extends Account{
         long seconds = seconds(dateaccount_created);
         int cont = countMultiplesTime(seconds, last_time_receive_paymentfinancy, Configurations.second_time_to_apply_policy);
         System.out.println(cont+ " pagar");
-        double financy = cont * this.mov_type_saving_account;
+        double financy = cont * Configurations.money_received_financy_account;
         if(financy > 0 ){
             this.money += financy;
             last_time_receive_paymentfinancy = seconds;
