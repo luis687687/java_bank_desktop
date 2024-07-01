@@ -36,7 +36,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="353.0" prefWidth="751.0" style="-fx-spacing: 20; -fx-padding: 30 0;">
                            <children>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="330.0" prefWidth="158.0" style="-fx-border-color: colormain; -fx-background-color: colormain;">
+                              <ScrollPane hbarPolicy="NEVER" minWidth="200.0" prefHeight="330.0" prefWidth="158.0" style="-fx-border-color: colormain; -fx-background-color: colormain;">
                                  <content>
                                     <VBox fx:id="agencyfather" prefHeight="466.0" prefWidth="139.0" />
                                  </content>

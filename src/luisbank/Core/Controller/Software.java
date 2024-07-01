@@ -289,9 +289,8 @@ public class Software  {
         return false;
    }
    private static Agency getFirstAgency(){
-       for(Agency age : agencies.values()){
+       for(Agency age : agencies.values())
            return age;
-       }
        return null;
    }
 
@@ -300,6 +299,8 @@ public class Software  {
    public static boolean saveAgencyState(){
         return tableAgency.save(agencies);
    }
+   
+
    public static boolean saveAdminState(){
         return tableAdmins.save(admins);
    }

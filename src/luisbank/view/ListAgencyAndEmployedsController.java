@@ -64,7 +64,8 @@ public class ListAgencyAndEmployedsController implements Initializable{
     
     
     public void setParentController(GUIController parentController){
-        this.parentController = parentController;
+        this.parentController = luisbank.LuisBank.mainController;
+        
     }
     
     public GUIController getParent(){

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<BorderPane id="main" fx:id="window" maxWidth="1.7976931348623157E308" prefHeight="735.0" prefWidth="1245.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.SettingsController">
+<BorderPane id="main" fx:id="window" maxWidth="1.7976931348623157E308" prefHeight="735.0" prefWidth="1245.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.AdminOptions">
    <center>
       <BorderPane fx:id="main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
@@ -75,34 +75,24 @@
                                           <Label style="-fx-text-fill: syscoloriicon; -fx-font-weight: bold; -fx-label-padding: 0 0 20 20;" text="Opções administrativas" />
                                           <VBox fx:id="quadro" layoutX="10.0" layoutY="30.0" prefHeight="428.0" prefWidth="294.0" style="-fx-background-color: colormain; -fx-spacing: 20;">
                                              <children>
-                                                <HBox id="time" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="284.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 20;" styleClass="line-option">
+                                                <HBox id="agency" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="284.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 20;" styleClass="line-option">
                                                    <children>
                                                       <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="31.0" style="-fx-padding: 8; -fx-background-radius: 5;" styleClass="icon-list">
                                                          <children>
                                                             <AnchorPane maxHeight="-Infinity" prefHeight="24.0" prefWidth="23.0" style="-fx-shape: &quot;M851.1 212.2c-120.89999999999998-32.19999999999999-238.89999999999998-73.29999999999998-344.8-148.1-2.900000000000034-1.999999999999993-7.5-1.999999999999993-10.400000000000034 0-107.19999999999999 74.9-225.39999999999998 115.6-346.5 148.3-3.3999999999999773 0.9000000000000057-6.199999999999989 3.0999999999999943-6.299999999999983 5-0.09999999999999432 1.0999999999999943-0.09999999999999432 2.1999999999999886-0.09999999999999432 3.299999999999983 2.4000000000000057 80.10000000000002 4.199999999999989 160.3 7.599999999999994 240.40000000000003 4.200000000000017 97.60000000000002 33.900000000000006 185.10000000000002 87.30000000000001 262.1 67.9 98.09999999999991 156.1 165.69999999999993 257.20000000000005 213.29999999999995 3.7999999999999545 1.7000000000000455 9.5 1.2000000000000455 13.5-0.6000000000000227 81.39999999999998-38.39999999999998 154.10000000000002-91.29999999999995 216.10000000000002-162.5 82-93.79999999999995 124.29999999999995-206.39999999999998 127.89999999999998-337.59999999999997 1.1000000000000227-42 3.6000000000000227-84 4.600000000000023-126.10000000000002 0.6999999999999318-29.80000000000001 0.2999999999999545-59.69999999999999 0.1999999999999318-89.29999999999998-0.10000000000002274-3.700000000000017-2.8999999999999773-7.300000000000011-6.2999999999999545-8.200000000000017z&quot;;" styleClass="icon-list-image" />
                                                          </children>
                                                       </HBox>
-                                                      <Label style="-fx-font-weight: bolder;" text="Configurações de duração" />
+                                                      <Label style="-fx-font-weight: bolder;" text="Gerir Agências" />
                                                    </children>
                                                 </HBox>
-                                                <HBox id="money" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="284.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 20;" styleClass="line-option-light">
+                                                <HBox id="employed" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="284.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 20;" styleClass="line-option-light">
                                                    <children>
                                                       <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="31.0" style="-fx-padding: 8; -fx-background-radius: 5;" styleClass="icon-list">
                                                          <children>
                                                             <AnchorPane maxHeight="-Infinity" prefHeight="24.0" prefWidth="23.0" style="-fx-shape: &quot;M851.1 212.2c-120.89999999999998-32.19999999999999-238.89999999999998-73.29999999999998-344.8-148.1-2.900000000000034-1.999999999999993-7.5-1.999999999999993-10.400000000000034 0-107.19999999999999 74.9-225.39999999999998 115.6-346.5 148.3-3.3999999999999773 0.9000000000000057-6.199999999999989 3.0999999999999943-6.299999999999983 5-0.09999999999999432 1.0999999999999943-0.09999999999999432 2.1999999999999886-0.09999999999999432 3.299999999999983 2.4000000000000057 80.10000000000002 4.199999999999989 160.3 7.599999999999994 240.40000000000003 4.200000000000017 97.60000000000002 33.900000000000006 185.10000000000002 87.30000000000001 262.1 67.9 98.09999999999991 156.1 165.69999999999993 257.20000000000005 213.29999999999995 3.7999999999999545 1.7000000000000455 9.5 1.2000000000000455 13.5-0.6000000000000227 81.39999999999998-38.39999999999998 154.10000000000002-91.29999999999995 216.10000000000002-162.5 82-93.79999999999995 124.29999999999995-206.39999999999998 127.89999999999998-337.59999999999997 1.1000000000000227-42 3.6000000000000227-84 4.600000000000023-126.10000000000002 0.6999999999999318-29.80000000000001 0.2999999999999545-59.69999999999999 0.1999999999999318-89.29999999999998-0.10000000000002274-3.700000000000017-2.8999999999999773-7.300000000000011-6.2999999999999545-8.200000000000017z&quot;;" styleClass="icon-list-image" />
                                                          </children>
                                                       </HBox>
-                                                      <Label style="-fx-font-weight: bolder;" text="Configurações de valores" />
-                                                   </children>
-                                                </HBox>
-                                                <HBox id="percent" alignment="CENTER_LEFT" layoutX="10.0" layoutY="61.0" prefHeight="53.0" prefWidth="284.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 20;" styleClass="line-option-light">
-                                                   <children>
-                                                      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="31.0" style="-fx-padding: 8; -fx-background-radius: 5;" styleClass="icon-list">
-                                                         <children>
-                                                            <AnchorPane maxHeight="-Infinity" prefHeight="24.0" prefWidth="23.0" style="-fx-shape: &quot;M851.1 212.2c-120.89999999999998-32.19999999999999-238.89999999999998-73.29999999999998-344.8-148.1-2.900000000000034-1.999999999999993-7.5-1.999999999999993-10.400000000000034 0-107.19999999999999 74.9-225.39999999999998 115.6-346.5 148.3-3.3999999999999773 0.9000000000000057-6.199999999999989 3.0999999999999943-6.299999999999983 5-0.09999999999999432 1.0999999999999943-0.09999999999999432 2.1999999999999886-0.09999999999999432 3.299999999999983 2.4000000000000057 80.10000000000002 4.199999999999989 160.3 7.599999999999994 240.40000000000003 4.200000000000017 97.60000000000002 33.900000000000006 185.10000000000002 87.30000000000001 262.1 67.9 98.09999999999991 156.1 165.69999999999993 257.20000000000005 213.29999999999995 3.7999999999999545 1.7000000000000455 9.5 1.2000000000000455 13.5-0.6000000000000227 81.39999999999998-38.39999999999998 154.10000000000002-91.29999999999995 216.10000000000002-162.5 82-93.79999999999995 124.29999999999995-206.39999999999998 127.89999999999998-337.59999999999997 1.1000000000000227-42 3.6000000000000227-84 4.600000000000023-126.10000000000002 0.6999999999999318-29.80000000000001 0.2999999999999545-59.69999999999999 0.1999999999999318-89.29999999999998-0.10000000000002274-3.700000000000017-2.8999999999999773-7.300000000000011-6.2999999999999545-8.200000000000017z&quot;;" styleClass="icon-list-image" />
-                                                         </children>
-                                                      </HBox>
-                                                      <Label style="-fx-font-weight: bolder;" text="Configuração de taxa" />
+                                                      <Label style="-fx-font-weight: bolder;" text="Adicionar Funcionários" />
                                                    </children>
                                                 </HBox>
                                              </children>
@@ -137,7 +127,7 @@
                                                 </HBox>
                                                 <VBox prefHeight="72.0" prefWidth="549.0">
                                                    <children>
-                                                      <Label style="-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: #483C94;" text="Configurações" />
+                                                      <Label style="-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: #483C94;" text="Administração" />
                                                       <Label prefHeight="17.0" prefWidth="517.0" text="Como administrador de sistema, Conifgure as actividades padrões da aplicação" />
                                                    </children>
                                                 </VBox>

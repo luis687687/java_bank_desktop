@@ -32,7 +32,7 @@ public class Configurations implements Serializable {
     public static double percent_credit_normal_account = 0.7; //taxa a cobrar em contas correntes
     public static double percent_credit_financy_account = 0.3; //taxa a cobrar em contas poupança
     public static double percent_financy_appendmoney = 0.1; //taxa a pagar em contas poupança
-    public static double money_received_financy_account = 0.4; //valor a cobrar pela manutenção
+    public static double money_received_financy_account = 0.4; //valor a a receber de investi
     public static double money_demand_corrent_account = 1.25; //valor a cobrar pela manutenção
 
     public static double financy_account_limite_remove_money = 2000;

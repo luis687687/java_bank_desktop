@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<GridPane maxHeight="-Infinity" prefHeight="404.0" prefWidth="774.0" style="-fx-background-color: colormain; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" prefHeight="404.0" prefWidth="774.0" style="-fx-background-color: colormain; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.ValorConfig">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
@@ -41,7 +41,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" text="Valor máximo de crédito" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="maxcred" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -61,7 +61,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" text="Valor a cobrar pela manutenção" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="manutencao" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -81,7 +81,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" text="Valor de lucro de investimento de conta poupança" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="lucro" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -101,7 +101,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" text="Valor limite de levantamento em conta poupança" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="limitelevantamento" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -113,7 +113,7 @@
                   </GridPane>
                   <VBox alignment="BOTTOM_LEFT" prefHeight="111.0" prefWidth="704.0" style="-fx-padding: 0 0 30 0;">
                      <children>
-                        <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="37.0" prefWidth="83.0" style="-fx-background-radius: 8;" styleClass="btn-default">
+                        <HBox fx:id="btnsave" alignment="CENTER" maxWidth="-Infinity" prefHeight="37.0" prefWidth="83.0" style="-fx-background-radius: 8;" styleClass="btn-default">
                            <children>
                               <Label styleClass="btn-text" text="Salvar" />
                            </children>

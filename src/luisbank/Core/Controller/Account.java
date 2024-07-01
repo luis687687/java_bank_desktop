@@ -164,17 +164,12 @@ public class Account implements Serializable {
                 this.total_mult += percent_mult * this.creditemoney;
                 return this.totalcreditemoney;
             }
-            if(totalpay != 0){
-                
+            if(totalpay != 0){   
                 if(this.totalcreditemoney > payedcredit + totalpay ){ //pode remover o crédito
-
                     if(this.money - totalpay < 0)
                         totalpay = this.money;
-                    
                     payedcredit += totalpay;
                     this.money -= totalpay;
-                    
-                    
                     if(this.totalcreditemoney - totalpay <= 0){
                         this.totalcreditemoney = 0;
                         this.datecredite_start = null;
@@ -185,7 +180,7 @@ public class Account implements Serializable {
                         
                     
                     last_time_to_pay_credite = seconds;
-                    moviments.add(new Moviment(-totalpay, Configurations.mov_type_credite_pay+(timespent != 1 ? " meses " : " mes"), this.money));
+                    moviments.add(new Moviment(-totalpay, Configurations.mov_type_credite_pay+timespent+(timespent != 1 ? " meses " : " mes"), this.money));
                 }
                 else{
                     double valuetake = this.totalcreditemoney;
@@ -242,16 +237,8 @@ public class Account implements Serializable {
     public boolean depositMoney(double money){
         double finalmoney = this.money + money;
         if(money > 0){
-//            if(this.money < 0){
-                
-//                if(finalmoney >= 0) //descontou tudo que estava lá
-//                this.moviments.add(new Moviment(-this.money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
-//                else //desconte tudo que entrou
-//                    this.moviments.add(new Moviment(-money, Configurations.mov_type_credite_take_money_on_deposit, finalmoney));
-//            }
             this.money = finalmoney;
             this.moviments.add(new Moviment(money, Configurations.mov_type_deposit, finalmoney));
-            
             return true;
         }
         return false;

@@ -46,18 +46,12 @@ public class LoginGUIController implements Initializable {
         btntheme.setOnMouseClicked( event -> {
             Manipulations.isLight = !Manipulations.isLight;
             if(!(new Manipulations()).changeTheme(main)){
-               
                 btntheme.getStyleClass().remove("btn-sun");
-                btntheme.getStyleClass().add("btn-moon");
-                
-                
+                btntheme.getStyleClass().add("btn-moon"); 
             }else{
-                
                 btntheme.getStyleClass().remove("btn-moon");
                 btntheme.getStyleClass().add("btn-sun");
             }
-            
-           
         });
         
         btnlogin.setOnMouseClicked(event -> {
@@ -69,14 +63,12 @@ public class LoginGUIController implements Initializable {
                 loginsms.setText("Bem sucedido!");
                 loginsms.setStyle("-fx-text-fill: syscolor");
                 BorderPane main = ((BorderPane)LuisBank.mainElement);
-                
                 (new Manipulations()).changeTheme(main);
                 main.getChildren().clear();
                 main.setCenter(LuisBank.centerElment);
                 main.setLeft(LuisBank.sideBar);
                 LuisBank.mainController.loadTable();
-                
-                
+                luisbank.LuisBank.mainController.getNameTop().setText(Software.getLoggedEmployed().getName());
             }else{
                loginsms.setText("Dados inválidos !");
                 loginsms.setStyle("-fx-text-fill: red");

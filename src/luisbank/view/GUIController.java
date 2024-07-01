@@ -35,7 +35,7 @@ public class GUIController implements Initializable {
     @FXML
     private Label texto;
     @FXML
-    private Label texto2;
+    private Label texto2, employedname;
     @FXML
     private GridPane area1, areabody1;
     @FXML private BorderPane main, areabody, hometable;
@@ -53,6 +53,7 @@ public class GUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         luisbank.LuisBank.mainElement = main;
         luisbank.LuisBank.mainController = this;
+        
 
         logout();
        
@@ -78,7 +79,19 @@ public class GUIController implements Initializable {
                 main.getChildren().remove(main.getCenter());
                 FXMLLoader fxml = new FXMLLoader(getClass().getResource("Settings.fxml"));
                 Parent elem = fxml.load();
-                main.setCenter(elem);
+                 FXMLLoader fxmlerror = new FXMLLoader(getClass().getResource("MessageArea.fxml"));
+               
+                Parent elementmessage = fxmlerror.load();
+                
+                
+                MessageAreaController controllererror = fxmlerror.getController();
+                controllererror.setMessage("Sem permissão, apenas administradores! ");
+                
+                
+                if(Software.isAdmin())
+                    main.setCenter(elem);
+                else
+                    main.setCenter(elementmessage);
                 
             }
             catch(Exception ex){
@@ -201,7 +214,14 @@ public class GUIController implements Initializable {
             case "btnmenu2":
                 fxml = FXMLLoader.load(getClass().getResource("CreateClient.fxml"));
                 areabody.getChildren().clear();
-                areabody.setCenter(fxml);
+                FXMLLoader fxmlerr = new FXMLLoader(getClass().getResource("MessageArea.fxml"));
+                Parent elementerr = fxmlerr.load();
+                MessageAreaController messagecontroller = fxmlerr.getController();
+                messagecontroller.setMessage("Desculpa, mas administradores não criam contas!😉");
+                if(Software.isAdmin())
+                    areabody.setCenter(elementerr);
+                else
+                    areabody.setCenter(fxml);
                 break;
             case "btnmenu4":
                 fxml = FXMLLoader.load(getClass().getResource("CreateEmployed.fxml"));
@@ -215,13 +235,24 @@ public class GUIController implements Initializable {
                 areabody.setCenter(fxml);
                 break;
              case "listagency":
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListAgencyAndEmployeds.fxml"));
-                fxml = loader.load();
-                ListAgencyAndEmployedsController controller = loader.getController();
-                controller.setParentController(this);
                 
-                areabody.getChildren().clear();
-                areabody.setCenter(fxml);
+                main.getChildren().remove(main.getCenter());
+                FXMLLoader fxml2 = new FXMLLoader(getClass().getResource("AdminOptions.fxml"));
+                FXMLLoader fxmlerror = new FXMLLoader(getClass().getResource("MessageArea.fxml"));
+                Parent elem2 = fxml2.load();
+                Parent elementmessage = fxmlerror.load();
+                
+                AdminOptions controller3 = fxml2.getController();
+                MessageAreaController controllererror = fxmlerror.getController();
+                controllererror.setMessage("Sem permissão, apenas administradores! ");
+                controller3.setParent(this);
+                
+                if(Software.isAdmin())
+                    main.setCenter(elem2);
+                else
+                    main.setCenter(elementmessage);
+                
+                
                 break;
              case "profile_employed":
                 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("EmployedProfile.fxml"));
@@ -248,6 +279,10 @@ public class GUIController implements Initializable {
     }
     public void openEmplyedProfile(){
         openScene("profile_employed");
+    }
+    
+    public Label getNameTop(){
+        return this.employedname;
     }
 
     

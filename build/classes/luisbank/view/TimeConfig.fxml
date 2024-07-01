@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<GridPane maxHeight="-Infinity" prefHeight="452.0" prefWidth="774.0" style="-fx-background-color: colormain; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" prefHeight="452.0" prefWidth="774.0" style="-fx-background-color: colormain; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="luisbank.view.TimeConfigController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
@@ -41,7 +41,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) de transferências interbank " />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="interbank" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -61,7 +61,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) de transferências" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="comum" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -81,7 +81,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) bloqueio conta poupança" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="bloqueio" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -100,8 +100,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) esperar pagamentos" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) esperar pagamentos de dívidas" />
+                        <TextField fx:id="esperadivida" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -121,7 +121,7 @@
                      </rowConstraints>
                      <children>
                         <Label style="-fx-font-weight: 600;" styleClass="subtitle" text="Tempo (segundos) cobrança manutenção" />
-                        <TextField styleClass="input" GridPane.columnIndex="1" />
+                        <TextField fx:id="manutencao" styleClass="input" GridPane.columnIndex="1" />
                      </children>
                      <effect>
                         <DropShadow height="12.21" radius="5.605" width="12.21">
@@ -133,7 +133,7 @@
                   </GridPane>
                   <VBox alignment="BOTTOM_LEFT" prefHeight="111.0" prefWidth="704.0" style="-fx-padding: 0 0 30 0;">
                      <children>
-                        <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="37.0" prefWidth="83.0" style="-fx-background-radius: 8;" styleClass="btn-default">
+                        <HBox fx:id="btnsave" alignment="CENTER" maxWidth="-Infinity" prefHeight="37.0" prefWidth="83.0" style="-fx-background-radius: 8;" styleClass="btn-default">
                            <children>
                               <Label styleClass="btn-text" text="Salvar" />
                            </children>

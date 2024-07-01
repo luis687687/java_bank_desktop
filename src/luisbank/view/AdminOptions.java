@@ -20,7 +20,7 @@ import javafx.scene.Parent;
  *
  * @author CyberPunk
  */
-public class SettingsController implements Initializable {
+public class AdminOptions implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -28,14 +28,20 @@ public class SettingsController implements Initializable {
     
     @FXML private VBox quadro;
     @FXML private BorderPane father;
+    GUIController parent;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        load("time");
+        load("agency");
         setActions();
         
         
+    }
+    
+    public void setParent(GUIController parent){
+        this.parent = parent;
+        System.out.println("Chamado!!");
     }
     
     public void setActions(){
@@ -61,22 +67,28 @@ public class SettingsController implements Initializable {
         try{
             FXMLLoader fxml = new FXMLLoader(getClass().getResource("TimeConfig.fxml"));
             father.getChildren().remove(father.getCenter());
+            Parent element = null;
             switch(id){
-                case "time":
-                    fxml = new FXMLLoader(getClass().getResource("TimeConfig.fxml"));
+                case "agency":
+                    
+                    fxml = new FXMLLoader(getClass().getResource("ListAgencyAndEmployeds.fxml"));
+                    element = fxml.load();
+                    ListAgencyAndEmployedsController controller = fxml.getController();
+                    System.out.println(controller + " PPPPPPPPPPPPPPPPPPPPPEEEEEFFADO "+fxml);
+                    controller.setParentController(this.parent);
+                    
+                   
                     break;
-            case "money":
-                fxml = new FXMLLoader(getClass().getResource("ValorConfig.fxml"));
+            case "employed":
+                fxml = new FXMLLoader(getClass().getResource("CreateEmployed.fxml"));
+                element = fxml.load();
                 System.out.println("MMMMMMMM");
                 break;
-            case "percent":
-                fxml = new FXMLLoader(getClass().getResource("PercentConfig.fxml"));
-                break;
-
-            }
-            Parent element = fxml.load();
            
-            father.setCenter(element);
+            }
+            
+             father.setCenter(element);
+        
             
         }
         catch(Exception ex) {
