@@ -87,6 +87,11 @@ public class CreateEmployedController implements Initializable {
             smserror.setText("Erro, a pass deve ter no mínimo 8 caracteres");
             return;
         }
+        if(email.length() < 4){
+            smserror.setText("Erro, o email deve ter no minimo 4 caracteres");
+            return;
+        }
+        
         if(agency != null){
             
             Employed empl = new Employed(email, password, phone, optionalphone, name);
